@@ -4,12 +4,9 @@ const Navbar = () => {
   const buttonClass = 'border rounded-full py-3 px-4 font-medium text-base';
   const linkClass = 'hover:cursor-pointer font-medium text-text-muted py-3 px-4 transition-all duration-100'
   return (
-    <nav className='w-full fixed z-1000 font-lato g-pad w-full text-white border-b border-border-primary'>
-      <section className='py-6.5 flex items-center justify-between' style={{
-          backdropFilter: 'blur(30px)',
-          WebkitBackdropFilter: 'blur(30px)'
-      }}>
-        <div className='w-56'>
+    <nav className='w-full fixed font-lato g-pad w-full text-white border-b border-border-primary'>
+      <section className='py-7 flex items-center justify-between'>
+        <div className='w-[230px]'>
           <img src={brandLogo} alt="brand logo" />
         </div>
         {/* links */}

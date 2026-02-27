@@ -1,4 +1,3 @@
-
 import Navbar from "@/shared/components/Navbar";
 import { Outlet } from "react-router-dom";
 

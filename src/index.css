@@ -20,6 +20,7 @@
 
   /* fonts */
   --font-lato: "Lato", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", sans-serif;
 }
 @layer base {
   * {
@@ -29,7 +30,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply transition-colors duration-200 ease-in;
+    @apply transition-all duration-300 ease-in;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   ul{
@@ -37,5 +38,5 @@
   }
 }
 @utility g-pad{
-  @apply px-20
+  @apply px-[15rem]
 }

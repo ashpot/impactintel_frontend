@@ -15,7 +15,7 @@ const TrustedSection = () => {
   ];
   return (
     <section className="bg-bg-main py-20">
-      <div className="max-w-7xl mx-auto text-center px-10">
+      <div className="global-p text-center">
         <h2 className="text-text-title font-bold text-4xl font-jakarta tracking-wide mb-12">
           Trusted by forward-thinking organizations
         </h2>

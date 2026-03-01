@@ -37,6 +37,6 @@
     @apply list-none;
   }
 }
-@utility g-pad{
-  @apply px-[15rem]
+@utility global-p{
+  @apply px-10 max-w-7xl mx-auto;
 }

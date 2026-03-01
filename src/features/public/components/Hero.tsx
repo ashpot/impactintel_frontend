@@ -5,14 +5,25 @@ import dashboardImage from '@/assets/images/dashboard_image.png'
 import floatingOne from '@/assets/icons/floating_icon_1.svg'
 import floatingTwo from '@/assets/icons/floating_icon_2.png'
 import floatingThree from '@/assets/icons/floating_icon_3.png'
+import { motion } from "framer-motion";
 import { cn } from '@/shared/utils/cn';
 const Hero = () => {
+  const floatingAnimation = {
+    animate: {
+      y: [0, -15, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut" as const,
+      },
+    },
+  };
   const buttonClass = 'group border rounded-full py-3 px-4 pl-14.5 font-medium text-base transition-all duration-300';
 
   return (
     <div className='bg-bg-dark'>
       <section
-        className="bg-no-repeat"
+        className="bg-no-repeat "
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundBlendMode: 'overlay',
@@ -20,7 +31,7 @@ const Hero = () => {
           // minHeight: '100vh',
         }}
       >
-        <div className='pt-40 g-pad space-y-6'>
+        <div className='pt-40 space-y-6 global-p'>
           <header className='text-center font-jakarta text-text-on-dark space-y-8'>
           <h1 className='leading-[1.18] font-semibold text-[64px]'>Manage CSR with clarity, accountability, and confidence.</h1>
           <p className='px-[13.5rem] text-xl leading-relaxed'>
@@ -49,20 +60,33 @@ const Hero = () => {
         </div>
                 
         {/* dashboard hero image */}
-        <div className='px-[16rem] mt-18 relative'>
-          
-          <div className='absolute left-[15rem] top-[30%] rounded-full z-10'>
+        <div className='global-p mt-18 relative'>
+  
+          <motion.div
+            variants={floatingAnimation}
+            animate="animate"
+            className='absolute left-[1rem] top-[30%] rounded-full z-10'
+          >
             <img src={floatingOne} alt="arrow" />
-          </div>
+          </motion.div>
 
-      
-          <div className='w-[11.688rem] absolute left-[9.3rem] bottom-[2rem] rounded-2xl z-10 shadow-lg '>
+          <motion.div
+            variants={floatingAnimation}
+            animate="animate"
+            transition={{ delay: 0.5 }}
+            className='w-[11.688rem] absolute left-[-3.3rem] bottom-[3.3rem] rounded-2xl z-10 shadow-lg'
+          >
             <img src={floatingTwo} alt="arrow"/>
-          </div>
+          </motion.div>
 
-          <div className='w-[14.375rem] absolute right-[10rem] bottom-[6rem] rounded-2xl z-10 shadow-lg'>
+          <motion.div
+            variants={floatingAnimation}
+            animate="animate"
+            transition={{ delay: 1 }}
+            className='w-[14.375rem] absolute right-[-2rem] bottom-[7.5rem] rounded-2xl z-10 shadow-lg'
+          >
             <img src={floatingThree} alt="arrow"/>
-          </div>
+          </motion.div>
 
           <img 
             src={dashboardImage} 

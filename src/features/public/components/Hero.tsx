@@ -10,7 +10,7 @@ import { cn } from '@/shared/utils/cn';
 const Hero = () => {
   const floatingAnimation = {
     animate: {
-      y: [0, -15, 0],
+      y: [0, -10, 0],
       transition: {
         duration: 4,
         repeat: Infinity,

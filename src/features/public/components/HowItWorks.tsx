@@ -10,12 +10,16 @@ const HowItWorks = () => {
             no: '01',
             title: 'Register Your Organization',
             body: `Set up your workspace and define user roles. Get your team onboarded in minutes.`,
+            src:'/src/assets/images/illustration_01.png',
+            alt: 'step one',
             reverse: false
         },
         {
             no: '02',
             title: 'Manage CSR Initiatives',
             body: `Track projects, budgets, timelines and impact. Everything in one organized dashboard.`,
+            src:'/src/assets/images/illustration_02.png',
+            alt: 'step two',
             reverse: true
         },
         {
@@ -23,11 +27,13 @@ const HowItWorks = () => {
             title: 'Review, Audit and Publish',
             body: `Approve reports internally and share public data when needed.
                      Full control and transparency.`,
+            src:'/src/assets/images/illustration_03.png',
+            alt: 'step three',
             reverse: false
         },
     ]
   return (
-    <div className="bg-bg-main">
+    <div className="bg-bg-main pb-30">
       <section className="global-p">
         {/* intro */}
         <div>
@@ -39,6 +45,7 @@ const HowItWorks = () => {
                     Complex compliance simplified. Go from onboarding to 
                     audit-ready in three structured steps.
                 `}
+                colorChange={false}
             />
         </div>
         <div className="space-y-17 mt-10">
@@ -48,14 +55,13 @@ const HowItWorks = () => {
                     no={d.no}
                     title={d.title}
                     body={d.body}
+                    src={d.src}
+                    alt={d.alt}
                     reverse={d.reverse}
-
                 />
             ))}
 
         </div>
-        
-
       </section>
     </div>
   )

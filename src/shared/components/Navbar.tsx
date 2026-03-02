@@ -6,7 +6,7 @@ const Navbar = () => {
   const linkClass = cn('hover:cursor-pointer hover:text-brand-primary font-medium', 
     'text-text-muted py-3 px-4 transition-all duration-300')
   return (
-    <nav className='w-full fixed font-lato px-30 w-full text-white border-b border-border-primary'>
+    <nav className='w-full fixed font-lato px-30 w-full text-white border-b border-border-primary z-1'>
       <section className='py-7 flex items-center justify-between'>
         <div className='w-[250px]'>
           <img src={brandLogo} alt="brand logo" />

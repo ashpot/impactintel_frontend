@@ -62,6 +62,7 @@ const Features = () => {
                     Fragmented data makes impact hard to see. We bring clarity to your 
                     initiatives so you can focus on the outcome, not the paperwork.
                 `}
+                colorChange={false}
             />
                 {/* feature boxes */}
             <div className="font-lato grid grid-cols-3 gap-5">

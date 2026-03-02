@@ -2,14 +2,18 @@ import Hero from "@/features/public/components/Hero"
 import TrustedSection from "@/features/public/components/TrustedSection"
 import Features from "@/features/public/components/Features"
 import HowItWorks from "@/features/public/components/HowItWorks"
+import Testimonials from "@/features/public/components/Testimonials"
+import CTA from "../components/CTA"
 
 const LandingPage = () => {
   return (
     <>
-      <Hero/>
-      <TrustedSection/>
-      <Features/>
+      <Hero />
+      <TrustedSection />
+      <Features />
       <HowItWorks />
+      <Testimonials />
+      <CTA />
     </>
   )
 }

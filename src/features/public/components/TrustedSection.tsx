@@ -20,13 +20,11 @@ const TrustedSection = () => {
           Trusted by forward-thinking organizations
         </h2>
 
-        {/* Top Row */}
-        <Marquee logos={logos} duration={40} />
+        <Marquee logos={logos} duration={40} reverse/>
 
         <div className="h-7" />
 
-        {/* Bottom Row (opposite direction) */}
-        <Marquee logos={logos} duration={40} reverse />
+        <Marquee logos={logos} duration={40} />
 
         <p className="mt-12 font-medium font-lato text-2xl tracking-wide">
           Join 12,000+ companies already growing

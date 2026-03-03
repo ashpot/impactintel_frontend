@@ -50,7 +50,7 @@ const Features = () => {
         },
     ]
   return (
-    <div className="bg-bg-main pb-20">
+    <div className="bg-bg-main pb-20" id="features">
       <section className="global-p text-center">
         {/* intro */}
         <div>

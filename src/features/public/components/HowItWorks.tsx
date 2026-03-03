@@ -1,7 +1,6 @@
 import type { howItWorks } from "../type"
 import { HeaderBtn } from "../ui/HeaderBtn"
 import HiwBox from "../ui/HiwBox"
-
 import Intro from "../ui/Intro"
 
 const HowItWorks = () => {
@@ -33,7 +32,7 @@ const HowItWorks = () => {
         },
     ]
   return (
-    <div className="bg-bg-main pb-30">
+        <div className="bg-bg-main pb-30" id="how-it-works">
       <section className="global-p">
         {/* intro */}
         <div>
@@ -64,6 +63,7 @@ const HowItWorks = () => {
         </div>
       </section>
     </div>
+    
   )
 }
 

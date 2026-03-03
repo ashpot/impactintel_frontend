@@ -21,7 +21,7 @@ const Hero = () => {
   const buttonClass = 'group border rounded-full py-3 px-4 pl-14.5 font-medium text-base transition-all duration-300';
 
   return (
-    <div className='bg-bg-dark'>
+    <div className='bg-bg-dark' id='home'>
       <section
         className="bg-no-repeat "
         style={{

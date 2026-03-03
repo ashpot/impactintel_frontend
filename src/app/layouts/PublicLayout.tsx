@@ -1,15 +1,19 @@
+
 import Navbar from "@/shared/components/Navbar";
+import SideNav from "@/shared/components/Sidenav";
 import { Outlet } from "react-router-dom";
 
 const PublicLayout = () => {
   return (
     <>
-    <Navbar />
+      <Navbar />
+      <SideNav />
       <main className="min-h-screen">
-        <Outlet/>
+        <Outlet />
       </main>
-    <footer />
+      <footer />
     </>
-  )
-}
-export default PublicLayout
+  );
+};
+
+export default PublicLayout;

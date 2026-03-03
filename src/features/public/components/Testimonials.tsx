@@ -29,7 +29,7 @@ const Testimonials = () => {
         },
     ]
   return (
-    <div className='bg-bg-dark'>
+    <div className='bg-bg-dark' id="testimonials">
         <section
             className="bg-no-repeat "
             style={{

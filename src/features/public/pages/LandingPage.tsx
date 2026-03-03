@@ -3,7 +3,8 @@ import TrustedSection from "@/features/public/components/TrustedSection"
 import Features from "@/features/public/components/Features"
 import HowItWorks from "@/features/public/components/HowItWorks"
 import Testimonials from "@/features/public/components/Testimonials"
-import CTA from "../components/CTA"
+import CTA from "@/features/public/components/CTA"
+import Footer from "@/features/public/components/Footer"
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <HowItWorks />
       <Testimonials />
       <CTA />
+      <Footer />
     </>
   )
 }

@@ -32,6 +32,7 @@ const HiwBox = ({no, title, body, src, alt, reverse}: howItWorks) => {
                 src={src}
                 alt={alt} 
                 className={rotateImg}
+                loading='lazy'
             />
             {no === '03' && 
                 <motion.div

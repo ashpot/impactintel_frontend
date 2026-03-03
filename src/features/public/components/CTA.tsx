@@ -6,8 +6,17 @@ import cta_bg from "@/assets/images/cta_bg.png"
 
 const CTA = () => {
   return (
-    <div className="bg-bg-main py-20 text-center">
-      <section className="global-p">
+    <div className="bg-bg-main text-center relative py-20">
+        <div
+            className="absolute inset-0 opacity-20 pointer-events-none"
+            style={{
+                background: `
+                radial-gradient(ellipse at top left, hsl(45, 100%, 51%) 0%, transparent 20%),
+                radial-gradient(ellipse at bottom right, hsl(45, 100%, 51%) 0%, transparent 20%)
+                `,
+            }}
+            />
+      <section className="global-p relative z-10">
         <div className="mx-auto my-27 mb-32 max-w-[765px] text-[22px] text-text-body leading-normal tracking-wide font-lato">
             Impact Intel is a CSR management platform designed to help 
             organizations run accountable, transparent, and well-documented 
@@ -67,7 +76,7 @@ const CTA = () => {
         </div>
 
       </section>
-    </div>
+      </div>
   )
 }
 export default CTA

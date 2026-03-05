@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn"
+import { cn } from "../../../shared/utils/cn"
 import arrow_right from '@/assets/icons/arrow_right_line.svg'
 
 const RequestBtn = () => {

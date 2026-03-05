@@ -1,12 +1,16 @@
 import logo from "@/assets/brand/brand_logo.png"
 import cta_bg from "@/assets/images/cta_bg.png"
 import type { Logo } from "../type";
+import facebook from "@/assets/icons/facebook.svg"
+import linkedIn from "@/assets/icons/linkedIn.svg"
+import instagram from "@/assets/icons/instagram.svg"
+import twitter from "@/assets/icons/twitter.svg"
 
 const socialLinks:Logo[] = [
-  { src: 'src/assets/icons/facebook.svg', alt: "Facebook" },
-  { src: 'src/assets/icons/linkedIn.svg', alt: "LinkedIn" },
-  { src: 'src/assets/icons/instagram.svg', alt: "Instagram" },
-  { src: 'src/assets/icons/twitter.svg', alt: "Twitter" },
+  { src: facebook, alt: "Facebook" },
+  { src: linkedIn, alt: "LinkedIn" },
+  { src: instagram, alt: "Instagram" },
+  { src: twitter, alt: "Twitter" },
 ];
 
 const footerLinks = [

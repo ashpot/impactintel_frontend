@@ -11,14 +11,13 @@ const LandingPage = () => {
     <>
       <Hero />
       <TrustedSection />
-      <Features />
-      <HowItWorks />
-      <Testimonials />
-      <div id="contact">
+      {/* <Features /> */}
+      {/* <HowItWorks /> */}
+      {/* <Testimonials /> */}
+      {/* <div id="contact">
       <CTA />
-      <Footer />
-      </div>
-      
+      <Footer/>
+      </div> */}
     </>
   )
 }

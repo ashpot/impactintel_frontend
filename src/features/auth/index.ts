@@ -1,0 +1,1 @@
+export {default as LoginPage} from "@/features/auth/pages/Login"

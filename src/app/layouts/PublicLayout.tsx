@@ -1,4 +1,3 @@
-
 import Navbar from "@/shared/components/Navbar";
 import SideNav from "@/shared/components/Sidenav";
 import { Outlet } from "react-router-dom";
@@ -8,12 +7,10 @@ const PublicLayout = () => {
     <>
       <Navbar />
       <SideNav />
-      <main className="min-h-screen">
+      <main className="min-h-screen overflow-x-hidden">
         <Outlet />
       </main>
-      <footer />
     </>
   );
 };
-
 export default PublicLayout;

@@ -1,5 +1,5 @@
 import HeroImage from '@/assets/images/BG.png'
-import RequestBtn from '@/shared/ui/RequestBtn';
+import RequestBtn from '@/features/public/ui/RequestBtn';
 import watch from '@/assets/icons/watch.svg'
 import dashboardImage from '@/assets/images/dashboard_image.png'
 import floatingOne from '@/assets/icons/floating_icon_1.svg'
@@ -31,16 +31,18 @@ const Hero = () => {
           // minHeight: '100vh',
         }}
       >
-        <div className='pt-40 space-y-6 global-p'>
+        <div className='pt-40 space-y-6 mx-auto max-w-[90%] md:global-p'>
           <header className='text-center font-jakarta text-text-on-dark space-y-8'>
-          <h1 className='leading-[1.18] font-semibold text-[64px]'>Manage CSR with clarity, accountability, and confidence.</h1>
-          <p className='px-[13.5rem] text-xl leading-relaxed'>
+          <h1 className='leading-[1.18] font-semibold md:text-[64px] text-[28px]'>
+            Manage CSR with clarity, accountability, and confidence.
+          </h1>
+          <p className='lg:px-[13.5rem] md:text-xl leading-relaxed'>
             Impact Intel is a centralized platform that helps organizations plan, 
             track, audit, and publish cooperate social responsibility initiatives - all in one place.
           </p>
         </header>
 
-          <section className='space-x-3 flex justify-center'>
+          <section className='md:gap-3 gap-4 flex md:flex-row flex-col justify-center max-w-[212px] md:global-p mx-auto'>
             <RequestBtn />
             <button className={cn('relative border border-text-on-dark bg-text-on-dark text-text-title',
               'hover:bg-text-on-dark/85 hover:border-text-on-dark/85',
@@ -60,12 +62,12 @@ const Hero = () => {
         </div>
                 
         {/* dashboard hero image */}
-        <div className='global-p mt-18 relative'>
+        <div className='md:global-p mt-18 relative max-w-[90%] mx-auto'>
   
           <motion.div
             variants={floatingAnimation}
             animate="animate"
-            className='absolute left-[1rem] top-[30%] rounded-full z-10'
+            className='absolute md:left-[1rem] md:top-[30%] left-[-0.5rem] top-[40%] rounded-full z-10 md:w-full w-[2rem]'
           >
             <img src={floatingOne} alt="arrow" />
           </motion.div>
@@ -74,7 +76,10 @@ const Hero = () => {
             variants={floatingAnimation}
             animate="animate"
             transition={{ delay: 0.5 }}
-            className='w-[11.688rem] absolute left-[-3.3rem] bottom-[3.3rem] rounded-2xl z-10 shadow-lg'
+            className={cn(
+              'md:w-[11rem] lg:w-[11.688rem] w-[5rem] absolute left-[-0.8rem] bottom-[-0.5rem] md:left-[0.5rem] md:bottom-[-1.5rem]',
+              'rounded-2xl z-10 shadow-lg lg:left-[-3.3rem] lg:bottom-[3.3rem]'
+            )}
           >
             <img src={floatingTwo} alt="arrow"/>
           </motion.div>
@@ -83,7 +88,10 @@ const Hero = () => {
             variants={floatingAnimation}
             animate="animate"
             transition={{ delay: 1 }}
-            className='w-[14.375rem] absolute right-[-2rem] bottom-[7.5rem] rounded-2xl z-10 shadow-lg'
+            className={cn(
+              'w-[6rem] md:w-[13rem] lg:w-[14.375rem] absolute rounded-2xl z-10 shadow-lg lg:right-[-2rem] lg:bottom-[7.5rem]',
+              'right-[-0.8rem] bottom-[1.3rem] md:right-[1rem] md:bottom-[3.6rem] lg:right-[1rem] lg:bottom-[6rem]'
+            )}
           >
             <img src={floatingThree} alt="arrow"/>
           </motion.div>

@@ -1,7 +1,7 @@
 import brandLogo from '@/assets/brand/brand_logo.png';
 import { cn } from '@/shared/utils/cn';
-import RequestBtn from '../ui/RequestBtn';
-import { useScrollNav } from '../hooks/Usescrollnav';
+import RequestBtn from '@/features/public/ui/RequestBtn';
+import { useScrollNav } from '@/shared/hooks/Usescrollnav';
 
 const Navbar = () => {
   const { showSideNav, activeSection, scrollTo, SECTIONS } = useScrollNav();
@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'w-full fixed font-lato px-30 text-white border-b border-border-primary z-50',
+        'hidden xl:block w-full fixed font-lato px-30 text-white border-b border-border-primary z-50',
         'transition-all duration-500 ease-in-out',
         // hide when scrolled past threshold
         showSideNav

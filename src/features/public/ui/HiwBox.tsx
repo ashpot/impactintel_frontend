@@ -17,7 +17,7 @@ const HiwBox = ({no, title, body, src, alt, reverse}: howItWorks) => {
     },
   };
   return (
-    <div className={cn("flex gap-24", reverse && 'flex-row-reverse')}>
+    <div className={cn("flex md:flex-row flex-col gap-24", reverse && 'flex-row-reverse')}>
         <div className="font-jakarta space-y-6 flex flex-col justify-center">
             <h1 className="text-brand-primary font-bold text-6xl">{no}</h1>
             <h2 className="text-text-title leading-tight text-[56px] font-bold">{title}</h2>

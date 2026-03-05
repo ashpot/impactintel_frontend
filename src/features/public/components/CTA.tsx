@@ -1,4 +1,4 @@
-import RequestBtn from "@/shared/ui/RequestBtn"
+import RequestBtn from "@/features/public/ui/RequestBtn"
 import Intro from "../ui/Intro"
 import starIcon from "@/assets/icons/star.svg"
 import combined_avatars from "@/assets/images/combined_avatar.png"
@@ -6,7 +6,7 @@ import cta_bg from "@/assets/images/cta_bg.png"
 
 const CTA = () => {
   return (
-    <div className="bg-bg-main text-center relative py-20">
+    <div className="bg-bg-main text-center relative py-20" id="request">
         <div
             className="absolute inset-0 opacity-20 pointer-events-none"
             style={{

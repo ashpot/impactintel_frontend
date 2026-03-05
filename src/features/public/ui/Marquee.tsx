@@ -17,7 +17,7 @@ const Marquee: React.FC<MarqueeProps> = ({
   return (
     <div className="relative overflow-hidden w-full">
       <motion.div
-        className="flex gap-10 w-max"
+        className="flex gap-10 md:w-max w-min"
         animate={{
           x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
         }}

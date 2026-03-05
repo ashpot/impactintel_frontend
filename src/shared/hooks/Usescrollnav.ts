@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const SECTIONS = [
@@ -35,7 +34,7 @@ export const useScrollNav = () => {
         },
         {
           threshold: 0,
-          rootMargin: "-40% 0px -40% 0px"  // fires when element crosses the middle 20% of the screen
+          rootMargin: "-40% 0px -40% 0px",
         }
       );
 

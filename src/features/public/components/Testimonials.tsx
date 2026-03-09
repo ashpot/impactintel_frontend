@@ -41,7 +41,7 @@ const Testimonials = () => {
             backgroundSize: 'cover',
         }}
         >
-            <div className="global-p py-20">
+            <div className="mx-auto max-w-[90%] md:global-p py-20">
                 {/* intro */}
                 <div>
                     {/* heading */}
@@ -57,7 +57,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* testimonials */}
-                <div className="grid grid-cols-3 gap-10">
+                <div className="grid lg:grid-cols-3 lg:gap-10 gap-7">
                     {data.map((d, index)=>(
                         <TestimonialCard 
                             key={index}

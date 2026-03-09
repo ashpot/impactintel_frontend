@@ -35,8 +35,8 @@ const HowItWorks = () => {
         },
     ]
   return (
-        <div className="bg-bg-main pb-30" id="how-it-works">
-      <section className="global-p">
+        <div className="bg-bg-main pb-30 overflow-hidden" id="how-it-works">
+      <section className="mx-auto max-w-[90%] md:global-p">
         {/* intro */}
         <div>
             {/* heading */}

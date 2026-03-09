@@ -57,7 +57,7 @@ const Features = () => {
     ]
   return (
     <div className="bg-bg-main pb-20" id="features">
-      <section className="global-p text-center">
+      <section className="text-center mx-auto max-w-[90%] md:global-p">
         {/* intro */}
         <div>
             {/* heading */}
@@ -71,7 +71,7 @@ const Features = () => {
                 colorChange={false}
             />
                 {/* feature boxes */}
-            <div className="font-lato grid md:grid-cols-3 gap-5">
+            <div className="font-lato grid md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
                     features.map((feature, index)=>{
                         return (

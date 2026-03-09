@@ -16,8 +16,8 @@ const CTA = () => {
                 `,
             }}
             />
-      <section className="global-p relative z-10">
-        <div className="mx-auto my-27 mb-32 max-w-[765px] text-[22px] text-text-body leading-normal tracking-wide font-lato">
+      <section className="mx-auto max-w-[90%] md:global-p relative z-10">
+        <div className="mx-auto md:my-27 my-5 md:mb-32 lg:max-w-[765px] md:text-[22px] text-[15px] text-text-body leading-normal tracking-wide font-lato">
             Impact Intel is a CSR management platform designed to help 
             organizations run accountable, transparent, and well-documented 
             social responsibility programs. We focus on structure, compliance, 
@@ -55,11 +55,11 @@ const CTA = () => {
                         />
                     </div>
                     {/* text */}
-                    <div className="text-text-muted font-lato font-medium leading-snug text-lg text-center">
+                    <div className="text-text-muted font-lato font-medium leading-snug md:text-lg text-xs text-center">
                         Over 12K+ Entrepreneurs, and businesses choose us
                     </div>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-6 px-5 lg:px-0">
                     <Intro 
                         header="Ready to bring structure to you CSR programs"
                         content="See how ImpactIntel can support your organizations's CSR goals."

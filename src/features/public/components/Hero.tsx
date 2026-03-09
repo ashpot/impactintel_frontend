@@ -31,7 +31,7 @@ const Hero = () => {
           // minHeight: '100vh',
         }}
       >
-        <div className='pt-40 space-y-6 mx-auto max-w-[90%] md:global-p'>
+        <div className='pt-40 space-y-6 mx-auto max-w-[90%] md:global-p '>
           <header className='text-center font-jakarta text-text-on-dark space-y-8'>
           <h1 className='leading-[1.18] font-semibold md:text-[64px] text-[28px]'>
             Manage CSR with clarity, accountability, and confidence.
@@ -60,10 +60,10 @@ const Hero = () => {
             </button>
           </section>
         </div>
-                
+            
         {/* dashboard hero image */}
-        <div className='md:global-p mt-18 relative max-w-[90%] mx-auto'>
-  
+        <div className='md:global-p mt-18 relative max-w-[90%] mx-auto overflow-hidden'>
+
           <motion.div
             variants={floatingAnimation}
             animate="animate"

@@ -32,6 +32,9 @@
   html {
     scroll-behavior: smooth;
   }
+  html, body {
+    overflow-x: hidden;
+  }
   body {
     @apply transition-all duration-300 ease-in;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -39,17 +42,7 @@
   ul{
     @apply list-none;
   }
-  ::-webkit-scrollbar {
-    width: 7px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsla(62, 27%, 98%);
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: hsl(45, 100%, 51%);
-    border-radius: 999px;
-    border: 1px solid hsla(62, 27%, 98%);
-  }
+
 }
 @utility global-p{
   @apply px-10 max-w-7xl mx-auto;

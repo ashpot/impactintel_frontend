@@ -16,9 +16,8 @@ const LandingPage = () => {
       <Testimonials />
       <div id="contact">
       <CTA />
-      <Footer />
+      <Footer/>
       </div>
-      
     </>
   )
 }

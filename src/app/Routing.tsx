@@ -3,6 +3,8 @@ import PublicLayout from "@/app/layouts/PublicLayout";
 import { LandingPage } from "@/features/public";
 import AuthLayout from "./layouts/AuthLayout";
 import { LoginPage } from "@/features/auth";
+import UserDashboardLayout from "./layouts/UserDashboardLayout";
+import { UserOverview } from "@/features/overview";
 const AppRouter = () => {
   return (
     <Routes>
@@ -16,11 +18,15 @@ const AppRouter = () => {
             <Route path="/login" element={<LoginPage/>}/>
         </Route>
 
-        {/* <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<OverviewPage />} />
-          <Route path="users" element={<UsersPage />} />
-          <Route path="settings" element={<SettingsPage />} />
-      </Route> */}
+        {/* dashboard routes */}
+        <Route path="/dashboard" element={<UserDashboardLayout/>}>
+          <Route index element={<UserOverview />} />
+          {/* <Route path="projects" element={<ProjectsPage />} /> */}
+          {/* <Route path="reports" element={<ReportsPage />} /> */}
+          {/* <Route path="uploads" element={<UploadsPage />} /> */}
+          {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}
+          {/* <Route path="settings" element={<SettingsPage />} /> */}
+      </Route>
     </Routes>
   )
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import loginLogo from '@/assets/brand/brandLogo_login.png'
+import Slider from "../components/Slider";
 
 const EyeIcon = ({ open }: { open: boolean }) => (
   <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -20,104 +22,46 @@ const LoginPage = ()=>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const slides = [
-    { headline: "Streamline", sub: "your impact." },
-    { headline: "Measure", sub: "what matters." },
-    { headline: "Report", sub: "with confidence." },
-  ];
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-6"
-      style={{ backgroundColor: "#f5f4ef", fontFamily: "'Georgia', 'Times New Roman', serif" }}
+      className="min-h-screen flex items-center justify-center p-6 font-lato bg-bg-main"
     >
       <div
-        className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden flex"
+        className="w-full max-w-5xl rounded-3xl overflow-hidden flex"
         style={{ minHeight: "600px" }}
       >
         {/* ── LEFT PANEL ── */}
-        <div
-          className="relative hidden md:flex flex-col justify-between w-1/2 p-10 overflow-hidden"
-          style={{
-            background: "linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 60%, #1a1a1a 100%)",
-          }}
-        >
-          {/* Subtle texture overlay */}
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 80%, #F5B800 0%, transparent 50%), radial-gradient(circle at 80% 20%, #F5B800 0%, transparent 40%)",
-            }}
-          />
 
-          {/* Dashboard card */}
-          <div className="relative z-10 flex flex-col items-center justify-center flex-1">
-            <div
-              className="w-full"
-              style={{
-                transform: "perspective(800px) rotateY(-6deg) rotateX(3deg)",
-                filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.5))",
-              }}
-            >
-              {/* <DashboardPreview /> */}
-            </div>
-          </div>
-
-          {/* Bottom text + dots */}
-          <div className="relative z-10">
-            <p
-              className="text-3xl font-bold mb-1"
-              style={{ color: "#F5B800", fontFamily: "'Georgia', serif" }}
-            >
-              {slides[activeSlide].headline}
-            </p>
-            <p className="text-white text-2xl font-light mb-5">
-              {slides[activeSlide].sub}
-            </p>
-            <div className="flex gap-2">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveSlide(i)}
-                  className="rounded-full transition-all duration-300"
-                  style={{
-                    width: i === activeSlide ? "24px" : "8px",
-                    height: "8px",
-                    backgroundColor: i === activeSlide ? "#F5B800" : "rgba(255,255,255,0.35)",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
+        <Slider/>
+        
         {/* ── RIGHT PANEL ── */}
         <div className="flex flex-col justify-between w-full md:w-1/2 px-12 py-10">
           {/* Logo */}
-          <div className="flex justify-end">
-            {/* <ImpactIntelLogo /> */}
+          <div className="flex justify-end mb-3">
+            <img 
+              src={loginLogo} 
+              alt="brand logo" 
+              className="w-[230px]"
+            />
           </div>
 
           {/* Form */}
           <div className="flex flex-col gap-6 flex-1 justify-center">
             <div>
               <h1
-                className="text-3xl font-bold text-gray-900 mb-1 tracking-tight"
-                style={{ fontFamily: "'Georgia', serif" }}
+                className="text-3xl font-bold text-text-title mb-1 tracking-wide"
               >
                 Client Login
               </h1>
-              <p className="text-gray-500 text-sm">
+              <p className="text-text-body text-lg">
                 Access your organization's workspace.
               </p>
             </div>
 
             {/* Email */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-gray-800 text-sm font-semibold" htmlFor="email">
+              <label className="text-text-title text-sm font-semibold" htmlFor="email">
                 Email
               </label>
               <input
@@ -126,7 +70,7 @@ const LoginPage = ()=>{
                 placeholder="you@organization.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none transition-all duration-200 bg-gray-50 focus:bg-white"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-placeholder outline-none transition-all duration-200 bg-gray-50 focus:bg-white"
                 style={{
                   boxShadow: "none",
                 }}
@@ -180,9 +124,8 @@ const LoginPage = ()=>{
             <button
             //   onClick={handleLogin}
             //   disabled={isLoading}
-              className="w-full py-3.5 rounded-full font-bold text-gray-900 text-base transition-all duration-200 flex items-center justify-center gap-2"
+              className="bg-brand-primary w-full py-3.5 rounded-full font-bold text-gray-900 text-base transition-all duration-200 flex items-center justify-center gap-2"
               style={{
-                backgroundColor: "#F5B800",
                 boxShadow: "0 4px 20px rgba(245,184,0,0.3)",
               }}
               onMouseEnter={(e) => {
@@ -194,7 +137,7 @@ const LoginPage = ()=>{
                 (e.target as HTMLButtonElement).style.boxShadow = "0 4px 20px rgba(245,184,0,0.3)";
               }}
             >
-              {true ? (
+              {false ? (
                 <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
@@ -205,12 +148,11 @@ const LoginPage = ()=>{
             </button>
 
             {/* Forgot password */}
-            <p className="text-center text-sm text-gray-500">
+            <p className="text-center text-sm text-gray-500 font-semibold">
               Forgot Password?{" "}
               <a
                 href="#"
-                className="font-semibold transition-colors"
-                style={{ color: "#F5B800" }}
+                className="font-semibold transition-colors text-brand-primary"
                 onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#e0a900")}
                 onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#F5B800")}
               >
@@ -219,6 +161,7 @@ const LoginPage = ()=>{
             </p>
           </div>
 
+                <hr className="w-full border-border-secondary my-5"/>
           {/* Footer */}
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-1.5 text-gray-400 text-xs">

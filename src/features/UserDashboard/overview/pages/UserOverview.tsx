@@ -1,5 +1,7 @@
 import PageTitle from "@/shared/components/PageTitle"
 import { type StatCardProps, StatCard } from "../components/StatCard"
+import CSRProgressChart from "../components/LineChart"
+import BudgetAllocationChart from "../components/PieChart"
 
 // mock data
 const statInfo: StatCardProps[] = [
@@ -46,7 +48,9 @@ const UserOverview = () => {
             title="Dashboard Overview"
             body="Last updated: Nov 8, 2025 at 10:30 AM"
         />
-        <div className="flex justify-between flex-wrap">
+
+        <div className="space-y-7">
+            <div className="flex gap-6 justify-between flex-wrap">
             
             {statInfo.map((stat, i)=>{
                 return (
@@ -63,8 +67,15 @@ const UserOverview = () => {
                 )
             })}
         </div>
+
+        {/* analytics */}
+        <div className="flex gap-6">
+            <CSRProgressChart/>
+            <BudgetAllocationChart/>
+        </div>
+        </div>
+        
     </div>
   )
 }
-
 export default UserOverview

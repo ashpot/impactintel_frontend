@@ -1,0 +1,1 @@
+export {default as Overview} from '@/features/UserDashboard/overview/pages/UserOverview'

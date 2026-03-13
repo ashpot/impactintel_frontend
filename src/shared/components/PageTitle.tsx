@@ -4,7 +4,7 @@ type headerProps = {
 }
 const PageTitle = (props:headerProps) => {
   return (
-    <div className="space-y-1 my-10">
+    <div className="space-y-1 mb-10">
       <h1 className="font-semibold text-text-primary01 text-4xl tracking-wide">{props.title}</h1>
       <p className="font-medium text-base text-text-body">{props.body}</p>
     </div>

@@ -2,6 +2,7 @@ import PageTitle from "@/shared/components/PageTitle"
 import { type StatCardProps, StatCard } from "../components/StatCard"
 import CSRProgressChart from "../components/LineChart"
 import BudgetAllocationChart from "../components/PieChart"
+import RecentRow from "../ui/RecentRow"
 
 // mock data
 const statInfo: StatCardProps[] = [
@@ -50,7 +51,7 @@ const UserOverview = () => {
         />
 
         <div className="space-y-7">
-            <div className="flex gap-6 justify-between flex-wrap">
+            <section className="flex gap-6 justify-between flex-wrap">
             
             {statInfo.map((stat, i)=>{
                 return (
@@ -66,13 +67,35 @@ const UserOverview = () => {
                     />
                 )
             })}
-        </div>
+        </section>
 
         {/* analytics */}
-        <div className="flex gap-6">
+        <section className="flex gap-6">
             <CSRProgressChart/>
             <BudgetAllocationChart/>
-        </div>
+        </section>
+
+            {/* recent activities */}
+            <section>
+                <div className="w-full bg-white rounded-3xl border border-line p-6 font-lato">
+                    {/* header */}
+                    <div className="flex justify-between items-center mb-6">
+                        <h2 className="text-lg font-semibold text-text-primary01">Recent Activities</h2>
+                        <p className="text-sm text-brand-accent font-medium">
+                            <a href="#" className="p-2">
+                                See all
+                            </a>
+                        </p>
+                    </div>
+
+                    {/* rows */}
+                    <RecentRow />
+                    <RecentRow />
+                    <RecentRow />
+                    <RecentRow />
+                    <RecentRow />
+                </div>
+            </section>
         </div>
         
     </div>

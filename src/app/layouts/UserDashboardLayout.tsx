@@ -8,7 +8,7 @@ const UserDashboardLayout = () => {
       <UserDashboardNav />
       <main className="flex-1 overflow-y-auto bg-dashboard-bg">
         <SearchNavbar/>
-        <div className="dashboard-p font-lato">
+        <div className="dashboard-p font-lato my-10">
           <Outlet />
         </div>
         

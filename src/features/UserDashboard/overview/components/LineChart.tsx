@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 // mock data inplace of backend data
@@ -63,20 +63,19 @@ const CSRProgressChart = ({
   data = hardcodedData,
   color = "hsl(45, 100%, 51%)",
 }: CSRProgressChartProps) => {
-    const [animated, setAnimated] = useState(true)
+    // const [animated, setAnimated] = useState(true)
   return (
     <div className="w-full bg-white rounded-3xl border border-line p-6 font-lato">
       {/* Header */}
       <h2 className="text-lg font-semibold text-text-primary01">{title}</h2>
       <p className="text-sm text-text-body mb-6">{subtitle}</p>
 
-      {/* Chart */}
       <ResponsiveContainer width="100%" height={320}>
         <LineChart
           data={data}
           margin={{ top: 10, right: 20, left: 0, bottom: 0 }}
         >
-          {/* Dashed horizontal grid lines only */}
+          {/* dashed grid lines only */}
           <CartesianGrid
             vertical={false}
             stroke="#e5e7eb"
@@ -109,8 +108,8 @@ const CSRProgressChart = ({
             strokeWidth={2.5}
             dot={{ r: 5, fill: color, strokeWidth: 0 }}
             activeDot={{ r: 7, fill: color, strokeWidth: 0 }}
-            isAnimationActive={animated}
-            onAnimationEnd={() => setAnimated(false)}
+            // isAnimationActive={animated}
+            // onAnimationEnd={() => setAnimated(false)}
             animationDuration={1200}
             animationEasing="ease-out"
              

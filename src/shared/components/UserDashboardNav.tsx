@@ -107,7 +107,7 @@ const UserDashboardNav = ()=>{
 
       {/* Navigation */}
       <nav className="flex-1 px-3 py-4 overflow-y-auto">
-        <ul className="space-y-4">
+        <ul className="space-y-3.5">
           {navItems.map((item) => {
             const isActive = activeItem === item.id;
             const Icon = item.icon;

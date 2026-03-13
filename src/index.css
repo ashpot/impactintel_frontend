@@ -3,6 +3,7 @@
 @theme{
   /* brand color */
   --color-brand-primary: hsl(45, 100%, 51%);
+  --color-brand-accent: hsla(44, 100%, 41%, 1);
 
   /* background */
   --color-bg-main: hsla(62, 27%, 98%);

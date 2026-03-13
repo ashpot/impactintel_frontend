@@ -34,8 +34,6 @@ const BudgetAllocationChart = () => {
         Budget Allocation
       </h2>
       <p className="text-sm text-text-body mb-4">Distribution by category</p>
-
-      {/* Donut Chart */}
       <ResponsiveContainer width="100%" height={240}>
         <PieChart>
           <Pie
@@ -67,7 +65,7 @@ const BudgetAllocationChart = () => {
       {/* Legend */}
       <div className="flex flex-col gap-3 mt-2">
         {data.map((entry) => (
-          <div key={entry.name} className="flex items-center justify-between">
+          <div key={entry.name} className="flex items-center justify-between ">
             <div className="flex items-center gap-2.5">
               {/* Colored dot */}
               <span

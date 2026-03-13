@@ -27,7 +27,7 @@ const statInfo: StatCardProps[] = [
     {
         title: 'budget utilization',
         score: '68%', 
-        summary: '$45M of $66M', 
+        summary: '₦45M of ₦66M', 
         badgeText: 'on track', 
         iconSrc: 'src/assets/icons/wallet.svg', 
         iconBg: '#E6FBEC', 
@@ -50,7 +50,7 @@ const UserOverview = () => {
             body="Last updated: Nov 8, 2025 at 10:30 AM"
         />
 
-        <div className="space-y-7">
+        <div className="space-y-7 mt-10">
             <section className="flex gap-6 justify-between flex-wrap">
             
             {statInfo.map((stat, i)=>{

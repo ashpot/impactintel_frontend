@@ -5,6 +5,7 @@ import AuthLayout from "./layouts/AuthLayout";
 import { LoginPage } from "@/features/auth";
 import UserDashboardLayout from "./layouts/UserDashboardLayout";
 import { Overview } from "@/features/UserDashboard/overview";
+import {ProjectsPage} from "@/features/UserDashboard/projects";
 const AppRouter = () => {
   return (
     <Routes>
@@ -21,7 +22,7 @@ const AppRouter = () => {
         {/* dashboard routes */}
         <Route path="/dashboard" element={<UserDashboardLayout/>}>
           <Route index element={<Overview />} />
-          {/* <Route path="projects" element={<ProjectsPage />} /> */}
+          <Route path="projects" element={<ProjectsPage />} />
           {/* <Route path="reports" element={<ReportsPage />} /> */}
           {/* <Route path="uploads" element={<UploadsPage />} /> */}
           {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}

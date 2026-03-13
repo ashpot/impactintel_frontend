@@ -1,0 +1,1 @@
+export {default as ProjectsPage} from "@/features/UserDashboard/projects/pages/ProjectsPage"

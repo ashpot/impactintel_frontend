@@ -1,0 +1,1 @@
+export {default as PublicSummaryPage} from '@/features/UserDashboard/publicSummary/pages/PublicSummary'

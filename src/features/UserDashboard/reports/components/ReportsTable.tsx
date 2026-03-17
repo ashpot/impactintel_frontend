@@ -145,7 +145,7 @@ const SkeletonRow = memo(({ cols }: { cols: number }) => (
   </tr>
 ));
 
-// ─── Column Definitions (outside component — stable reference) ────────────────
+// ─── Column Definitions (outside component — stable reference) 
 
 const columnHelper = createColumnHelper<Report>();
 
@@ -246,7 +246,7 @@ const ReportsTable = () => {
   }, [pageIndex, pageCount]);
 
   return (
-    <div className="bg-white rounded-3xl border border-line font-lato overflow-hidden">
+    <div className="bg-white rounded-2xl border border-line font-lato overflow-hidden">
 
       {/* Title */}
       <div className="px-6 pt-6 pb-2">

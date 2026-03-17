@@ -2,10 +2,14 @@ import PageTitle from "@/shared/components/PageTitle"
 import Button from "@/shared/ui/Button"
 import { CalendarDays } from "lucide-react"
 import Drop from "../components/Drop"
+import UploadTable from "../components/UploadTable"
 
 const UploadsPage = () => {
   return (
-        <div className="font-lato">
+        <div className="relative font-lato">
+            {/* <AnimatePresence>
+                <UploadSuccessModal/>
+            </AnimatePresence> */}
         {/* heading */}
         <section className="flex justify-between items-center mb-10">
             <PageTitle
@@ -23,6 +27,7 @@ const UploadsPage = () => {
 
         <div className="space-y-7">
             <Drop />
+            <UploadTable/>
         </div>
         
           

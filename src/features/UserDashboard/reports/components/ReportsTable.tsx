@@ -68,7 +68,7 @@ const fetchReports = async (
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 const TypeBadge = memo(({ type }: { type: Report["type"] }) => (
-  <span className="bg-#FFFAE9 inline-flex px-3 py-1.5 rounded-lg border border-brand-primary text-sm font-medium text-brand-primary whitespace-nowrap">
+  <span className="bg-nav-active inline-flex px-3 py-1.5 rounded-lg border border-brand-primary text-sm font-medium text-brand-primary whitespace-nowrap">
     {type}
   </span>
 ));

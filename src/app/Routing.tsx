@@ -8,6 +8,7 @@ import { Overview } from "@/features/UserDashboard/overview";
 import {ProjectsPage} from "@/features/UserDashboard/projects";
 import { AnimatePresence } from "framer-motion";
 import { ReportsPage } from "@/features/UserDashboard/reports";
+import { UploadsPage } from "@/features/UserDashboard/uploads";
 const AppRouter = () => {
   const location = useLocation();
   return (
@@ -28,7 +29,7 @@ const AppRouter = () => {
           <Route index element={<Overview />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="reports" element={<ReportsPage />} />
-          {/* <Route path="uploads" element={<UploadsPage />} /> */}
+          <Route path="uploads" element={<UploadsPage />} />
           {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}
           {/* <Route path="settings" element={<SettingsPage />} /> */}
       </Route>

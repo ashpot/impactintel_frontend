@@ -13,7 +13,8 @@ const statInfo: StatCardProps[] = [
         badgeText: '8% vs last quater', 
         iconSrc: 'src/assets/icons/trend.svg', 
         iconBg: '#FFFAE9', 
-        iconBorderColor: '#FFEBA4' 
+        iconBorderColor: '#FFEBA4',
+        index: 1
     },
     {
         title: 'total beneficiaries',
@@ -22,7 +23,8 @@ const statInfo: StatCardProps[] = [
         badgeText: '14% vs last month', 
         iconSrc: 'src/assets/icons/two_user.svg', 
         iconBg: '#E8EBEE', 
-        iconBorderColor: '#A2ACBA' 
+        iconBorderColor: '#A2ACBA',
+        index: 2
     },
     {
         title: 'budget utilization',
@@ -31,7 +33,8 @@ const statInfo: StatCardProps[] = [
         badgeText: 'on track', 
         iconSrc: 'src/assets/icons/wallet.svg', 
         iconBg: '#E6FBEC', 
-        iconBorderColor: '#98EDB2' 
+        iconBorderColor: '#98EDB2',
+        index: 3
     },
     {
         title: 'sdg alignment',
@@ -39,24 +42,26 @@ const statInfo: StatCardProps[] = [
         summary: 'primary focus areas',  
         iconSrc: 'src/assets/icons/target.svg', 
         iconBg: '#EFEFEF', 
-        iconBorderColor: '#C5C6C7' 
+        iconBorderColor: '#C5C6C7',
+        index: 4
     },
 ]
 const UserOverview = () => {
   return (
-    <div className="font-lato">
+        <div className="font-lato">
         <PageTitle
             title="Dashboard Overview"
             body="Last updated: Nov 8, 2025 at 10:30 AM"
         />
 
         <div className="space-y-7 mt-10">
-            <section className="flex gap-6 justify-between flex-wrap">
-            
+            <section 
+                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {statInfo.map((stat, i)=>{
                 return (
                     <StatCard
                         key={i}
+                        index={stat.index}
                         title={stat.title}
                         score={stat.score}
                         summary={stat.summary}

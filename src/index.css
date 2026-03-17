@@ -55,6 +55,11 @@
     @apply transition-all duration-300 ease-in;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  .font-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
   ul{
     @apply list-none;
   }

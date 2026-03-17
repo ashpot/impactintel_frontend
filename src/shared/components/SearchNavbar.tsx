@@ -7,7 +7,7 @@ import { cn } from "../utils/cn";
 const user = {
   name: "Sarah Johnson",
   role: "Admin",
-  avatar: "src/assets/images/testimonial_avatar_03.png",
+  avatar: "/src/assets/images/testimonial_avatar_03.png",
 };
 const SearchNavbar = ()=>{
   const [query, setQuery] = useState("");

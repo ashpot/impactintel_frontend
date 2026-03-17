@@ -1,4 +1,5 @@
 import trending from "@/assets/icons/trending.svg"
+import { CardAnimation } from "@/shared/components/CardAnimation";
 
 export interface StatCardProps {
   title: string;
@@ -8,6 +9,7 @@ export interface StatCardProps {
   iconSrc: string;
   iconBg: string;
   iconBorderColor: string;
+  index: number
 }
 
 export const StatCard = ({
@@ -18,10 +20,13 @@ export const StatCard = ({
   iconSrc,
   iconBg,
   iconBorderColor,
+  index = 0
 }: StatCardProps) => {
   return (
-    <div className="shrink-0 relative bg-white rounded-2xl border border-line p-6 font-lato">
-
+    <CardAnimation 
+      className="relative bg-white rounded-2xl border border-line p-6 font-lato w-full"
+      index={index}
+    >
       {/* Icon + Content Row */}
       <div className="flex items-center gap-4">
 
@@ -60,7 +65,6 @@ export const StatCard = ({
           </div>
         </>
       )}
-
-    </div>
+    </CardAnimation>
   );
 }

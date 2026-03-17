@@ -5,10 +5,12 @@ import HowItWorks from "@/features/public/components/HowItWorks"
 import Testimonials from "@/features/public/components/Testimonials"
 import CTA from "@/features/public/components/CTA"
 import Footer from "@/features/public/components/Footer"
+// import PageTransition from "@/shared/components/PageTransition"
 
 const LandingPage = () => {
   return (
     <>
+    {/* <PageTransition> */}
       <Hero />
       <TrustedSection />
       <Features />
@@ -18,6 +20,7 @@ const LandingPage = () => {
       <CTA />
       <Footer/>
       </div>
+    {/* </PageTransition> */}
     </>
   )
 }

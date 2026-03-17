@@ -1,5 +1,6 @@
 import { cn } from "@/shared/utils/cn";
 import { Search, ChevronDown, Download } from "lucide-react";
+import Button from "../ui/Button";
 
 interface TableToolbarProps {
   // search: string;
@@ -78,13 +79,9 @@ const TableToolbar = ({
       <div className="h-7 w-px bg-line hidden sm:block" />
 
       {/* Export CSV */}
-      <button
-        // onClick={onExport}
-        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg hover:bg-brand-primary/5 active:scale-95 transition-all"
-      >
-        <Download className="w-4 h-4" />
-        Export CSV
-      </button>
+        <Button variant="outline" leftIcon={<Download size={16} />}>
+            Export CSV
+        </Button>
 
     </div>
   );

@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import { ReportsPage } from "@/features/UserDashboard/reports";
 import { UploadsPage } from "@/features/UserDashboard/uploads";
 import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
+import { SettingsPage } from "@/features/UserDashboard/settings";
 const AppRouter = () => {
   const location = useLocation();
   return (
@@ -32,7 +33,7 @@ const AppRouter = () => {
           <Route path="reports" element={<ReportsPage />} />
           <Route path="uploads" element={<UploadsPage />} />
           <Route path="public-summary" element={<PublicSummaryPage />} />
-          {/* <Route path="settings" element={<SettingsPage />} /> */}
+          <Route path="settings" element={<SettingsPage />} />
       </Route>
     </Routes>
     </AnimatePresence>

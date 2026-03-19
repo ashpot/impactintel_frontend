@@ -71,3 +71,28 @@
 @utility dashboard-p{
   @apply px-5 max-w-7xl mx-auto;
 }
+.leaflet-popup-custom .leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  border: 1px solid hsla(0, 0%, 91%, 1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  padding: 0 !important;
+}
+.leaflet-popup-custom .leaflet-popup-content {
+  margin: 14px 16px !important;
+}
+.leaflet-popup-custom .leaflet-popup-tip {
+  background: white !important;
+}
+.leaflet-container {
+  background: #fdf8e1 !important;
+}
+.leaflet-control-zoom a {
+  background: #333 !important;
+  color: white !important;
+  border: none !important;
+}
+.leaflet-control-zoom {
+  border: none !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}

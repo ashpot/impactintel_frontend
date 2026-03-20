@@ -3,6 +3,7 @@ import { type StatCardProps, StatCard } from "../components/StatCard"
 import CSRProgressChart from "../components/LineChart"
 import BudgetAllocationChart from "../components/PieChart"
 import RecentRow from "../ui/RecentRow"
+import PageTransition from "@/shared/components/PageTransition"
 
 // mock data
 const statInfo: StatCardProps[] = [
@@ -48,8 +49,8 @@ const statInfo: StatCardProps[] = [
 ]
 const UserOverview = () => {
   return (
-        <div className="font-lato">
-        <PageTitle
+        <PageTransition>
+            <PageTitle
             title="Dashboard Overview"
             body="Last updated: Nov 8, 2025 at 10:30 AM"
         />
@@ -102,8 +103,7 @@ const UserOverview = () => {
                 </div>
             </section>
         </div>
-        
-    </div>
+        </PageTransition>
   )
 }
 export default UserOverview

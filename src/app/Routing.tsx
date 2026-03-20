@@ -1,25 +1,28 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import PublicLayout from "@/app/layouts/PublicLayout";
 import { LandingPage } from "@/features/public";
-import AuthLayout from "./layouts/AuthLayout";
 import { LoginPage } from "@/features/auth";
-import UserDashboardLayout from "./layouts/UserDashboardLayout";
 import { Overview } from "@/features/UserDashboard/overview";
 import {ProjectsPage} from "@/features/UserDashboard/projects";
 import { AnimatePresence } from "framer-motion";
 import { ReportsPage } from "@/features/UserDashboard/reports";
 import { UploadsPage } from "@/features/UserDashboard/uploads";
 import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
-import SettingsLayout from "./layouts/SettingsLayout";
 import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
+import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
 
 const AppRouter = () => {
   const location = useLocation();
+  const getSubRouteKey = () => {
+    if (location.pathname.startsWith('/dashboard/settings')) {
+      return '/dashboard/settings'; 
+    }
+    return location.pathname;
+  };
   return (
     <AnimatePresence mode="wait" initial={false}>
-      <Routes location={location} key={location.pathname}>
+      <Routes location={location} key={getSubRouteKey()}>
         {/* public */}
-        <Route element={<PublicLayout/>}>
+        <Route element={<PublicLayout />}>
             <Route index element={<LandingPage/>}/>
         </Route>
 

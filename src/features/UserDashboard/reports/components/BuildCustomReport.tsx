@@ -61,7 +61,7 @@ const CheckboxItem: React.FC<CheckboxItemProps> = ({ id, label, checked, onChang
           <svg
             viewBox="0 0 10 8"
             fill="none"
-            className="w-2.5 h-2 text-text-primary"
+            className="w-2.5 h-2 text-white"
             stroke="currentColor"
             strokeWidth={2}
             strokeLinecap="round"

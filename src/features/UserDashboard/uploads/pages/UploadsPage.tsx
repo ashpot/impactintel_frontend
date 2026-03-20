@@ -3,13 +3,11 @@ import Button from "@/shared/ui/Button"
 import { CalendarDays } from "lucide-react"
 import Drop from "../components/Drop"
 import UploadTable from "../components/UploadTable"
+import PageTransition from "@/shared/components/PageTransition"
 
 const UploadsPage = () => {
   return (
-        <div className="relative font-lato">
-            {/* <AnimatePresence>
-                <UploadSuccessModal/>
-            </AnimatePresence> */}
+    <PageTransition>
         {/* heading */}
         <section className="flex justify-between items-center mb-10">
             <PageTitle
@@ -29,9 +27,7 @@ const UploadsPage = () => {
             <Drop />
             <UploadTable/>
         </div>
-        
-          
-    </div>
+    </PageTransition>
   )
 }
 

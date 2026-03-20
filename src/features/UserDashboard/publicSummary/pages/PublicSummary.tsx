@@ -4,6 +4,7 @@ import HeroBanner from "../components/HeroBanner"
 import NigeriaProjectMap from "@/features/UserDashboard/publicSummary/components/Map";
 import { Blog } from "../components/Blog";
 import image from "@/assets/images/storyImage.png"
+import PageTransition from "@/shared/components/PageTransition";
 
 const PUBLIC_STAT: Omit<PublicSumCardProps, 'index'>[] = [
     {
@@ -41,7 +42,8 @@ const PUBLIC_STAT: Omit<PublicSumCardProps, 'index'>[] = [
 ]
 const PublicSummary = () => {
   return (
-    <div className="text-3xl space-y-7">
+    <PageTransition>
+        <div className="space-y-7">
         <HeroBanner />
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {PUBLIC_STAT.map((p,i)=>{
@@ -98,6 +100,8 @@ const PublicSummary = () => {
             </div>
         </section>
     </div>
+    </PageTransition>
+    
   )
 }
 export default PublicSummary

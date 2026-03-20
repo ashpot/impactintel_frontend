@@ -1,9 +1,7 @@
+import TeamMembersTable from "../components/TeamMembersTable"
+
 const ManagementSettings = () => {
-  return (
-    <div>
-      management settings
-    </div>
-  )
+  return <TeamMembersTable />
 }
 
 export default ManagementSettings

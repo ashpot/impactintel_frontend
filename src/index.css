@@ -71,6 +71,9 @@
 @utility dashboard-p{
   @apply px-5 max-w-7xl mx-auto;
 }
+@utility card-shadow{
+  @apply shadow-[0px_2px_12px_0px_hsla(215,50%,23%,0.08)];
+}
 .leaflet-popup-custom .leaflet-popup-content-wrapper {
   border-radius: 16px !important;
   border: 1px solid hsla(0, 0%, 91%, 1) !important;

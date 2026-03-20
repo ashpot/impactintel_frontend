@@ -18,7 +18,7 @@ export const Blog: React.FC<blogProps> = ({
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.35, delay: index * 0.25, ease: "easeOut" }}
         whileHover={{ scale: 1.01 }}
-        className="shadow-[0px_2px_12px_0px_hsla(215,50%,23%,0.08)] bg-transparent min-w-89 rounded-2xl">
+        className="card-shadow bg-transparent min-w-89 rounded-2xl">
         {/* blog image */}
         <div className="max-h-50.75">
             <img 

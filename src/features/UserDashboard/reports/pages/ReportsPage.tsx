@@ -6,6 +6,7 @@ import type { genProps } from "../components/GenReportsCard"
 import GenReportsCard from "../components/GenReportsCard"
 import BuildCustomReport from "../components/BuildCustomReport"
 import ReportsTable from "../components/ReportsTable"
+import PageTransition from "@/shared/components/PageTransition"
 
 const generateReportInfo:Omit<genProps, 'index'>[] = [
     {
@@ -32,7 +33,7 @@ const generateReportInfo:Omit<genProps, 'index'>[] = [
 ]
 const ReportsPage = () => {
   return (
-        <div className="font-lato">
+    <PageTransition>
         {/* heading */}
         <section className="flex justify-between items-center mb-10">
             <PageTitle
@@ -68,9 +69,7 @@ const ReportsPage = () => {
             <BuildCustomReport />
             <ReportsTable />
         </div>
-        
-          
-    </div>
+    </PageTransition>
   )
 }
 

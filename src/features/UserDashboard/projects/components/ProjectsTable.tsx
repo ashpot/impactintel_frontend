@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-table";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,11 +140,22 @@ const columnHelper = createColumnHelper<Project>();
 
 const COLUMNS = [
   columnHelper.accessor("name", {
-    header: "Project Name",
-    cell: (i) => (
-      <span className="text-sm font-medium text-text-primary01">{i.getValue()}</span>
-    ),
-  }),
+  header: "Project Name",
+  cell: (i) => {
+    const row = i.row.original;
+    // slugify name for a friendly url
+    const projectSlug = row.name.toLowerCase().replace(/ /g, "-"); 
+    
+    return (
+      <Link 
+        to={`/dashboard/projects/${projectSlug}`} 
+        className="text-sm font-medium text-text-primary01 hover:text-brand-primary hover:underline"
+      >
+        {i.getValue()}
+      </Link>
+    );
+  },
+}),
   columnHelper.accessor("budgetSpent", {
     header: "Budget",
     cell: (i) => {
@@ -312,7 +324,7 @@ const ProjectsTable = ({ search = "", statusFilter = "All Status" }: ProjectsTab
                     ${isPlaceholderData ? "opacity-50" : "opacity-100"}
                   `}
                 >
-                  {row.getVisibleCells().map((cell) => (
+                    {row.getVisibleCells().map((cell) => (
                     <td key={cell.id} className="px-5 py-4 whitespace-nowrap">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>

@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { LandingPage } from "@/features/public";
 import { LoginPage } from "@/features/auth";
 import { Overview } from "@/features/UserDashboard/overview";
-import {ProjectsPage} from "@/features/UserDashboard/projects";
+import {ProjectDetailsPage, ProjectDocuments, ProjectMetrics, ProjectOverview, ProjectsPage} from "@/features/UserDashboard/projects";
 import { AnimatePresence } from "framer-motion";
 import { ReportsPage } from "@/features/UserDashboard/reports";
 import { UploadsPage } from "@/features/UserDashboard/uploads";
@@ -34,7 +34,19 @@ const AppRouter = () => {
         {/* dashboard routes */}
         <Route path="/dashboard" element={<UserDashboardLayout/>}>
           <Route index element={<Overview />} />
-          <Route path="projects" element={<ProjectsPage />} />
+
+
+          <Route path="projects">
+            <Route index element={<ProjectsPage />} />          
+            <Route path=":slug" element={<ProjectDetailsPage />}>
+              <Route index element={<ProjectOverview />} />
+              <Route path="overview"   element={<ProjectOverview />} />
+              <Route path="metrics"    element={<ProjectMetrics />} />
+              <Route path="documents"  element={<ProjectDocuments />} />
+            </Route>
+          </Route>
+
+
           <Route path="reports" element={<ReportsPage />} />
           <Route path="uploads" element={<UploadsPage />} />
           <Route path="public-summary" element={<PublicSummaryPage />} />

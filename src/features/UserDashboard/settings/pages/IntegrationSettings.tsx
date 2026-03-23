@@ -1,10 +1,10 @@
-import { Link2Off } from 'lucide-react';
+import { Plugs } from '@/shared';
 
 const IntegrationSettings = () => {
   const integrations = [
-    { name: 'Google Drive', icon: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg' },
-    { name: 'Slack', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg' },
-    { name: 'Microsoft Teams', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg' },
+    { name: 'Google Drive', icon: '/src/assets/logo/logo_google_drive.svg' },
+    { name: 'Slack', icon: '/src/assets/logo/logo_slack.svg' },
+    { name: 'Microsoft Teams', icon: '/src/assets/logo/logo_teams.svg' },
   ];
 
   return (
@@ -12,7 +12,7 @@ const IntegrationSettings = () => {
       
       {/* Top Icon */}
       <div className="w-16 h-16 bg-bg-soft rounded-full flex items-center justify-center mb-6">
-        <Link2Off className="text-text-body/40" size={32} />
+        <Plugs className="text-text-body/40 w-10 h-10" />
       </div>
 
       {/* Text Content */}

@@ -7,11 +7,12 @@ export const useOrganizationForm = (defaultData?: Partial<OrganizationFormValues
   return useForm<OrganizationFormValues>({
     resolver: zodResolver(organizationSchema),
     mode: "onChange",
+    // todo: later add the company current details as value placeholders not empty string
     defaultValues: {
-      name: 'Shell Nigeria',
-      email: 'contact@organization.org',
-      phone: '+234 XXX XXX XXXX',
-      website: 'https://www.yourwebsite.com',
+      name: '',
+      email: '',
+      phone: '',
+      website: '',
       mission: '',
       ...defaultData
     },

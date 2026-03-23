@@ -1,11 +1,13 @@
 import type { OrganizationFormValues } from '../schemas/profileSchema';
 import { useOrganizationForm } from '../actions';
 import { UploadsIcon } from '@/shared';
+import Button from '@/shared/ui/Button';
 
 const ProfileSettings = () => {
   const { 
     register, 
     handleSubmit, 
+    reset,
     watch,
     formState: { errors, isSubmitting, isValid } 
   } = useOrganizationForm();
@@ -18,7 +20,7 @@ const ProfileSettings = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-8 rounded-xl card-shadow font-jakarta border border-line">
+    <div className="mx-auto bg-white p-8 rounded-xl card-shadow font-jakarta border border-line">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         
         {/* Organization Logo */}
@@ -38,6 +40,7 @@ const ProfileSettings = () => {
             <label className="text-sm font-semibold text-text-title">Organization Name</label>
             <input
               {...register("name")}
+              placeholder='Shell Nigeria'
               className={`px-4 py-3 rounded-lg border focus:outline-none transition-all ${
                 errors.name ? 'border-error' : 'border-border-secondary focus:border-brand-primary'
               }`}
@@ -50,6 +53,7 @@ const ProfileSettings = () => {
             <input
               type="email"
               {...register("email")}
+              placeholder='contact@organization.org'
               className={`px-4 py-3 rounded-lg border focus:outline-none transition-all ${
                 errors.email ? 'border-error' : 'border-border-secondary focus:border-brand-primary'
               }`}
@@ -61,6 +65,7 @@ const ProfileSettings = () => {
             <label className="text-sm font-semibold text-text-title">Phone Number</label>
             <input
               {...register("phone")}
+              placeholder='+234 XXX XXX XXXX'
               className="px-4 py-3 rounded-lg border border-border-secondary focus:outline-none focus:border-brand-primary"
             />
           </div>
@@ -69,6 +74,7 @@ const ProfileSettings = () => {
             <label className="text-sm font-semibold text-text-title">Website</label>
             <input
               {...register("website")}
+              placeholder='https://www.yourwebsite.com'
               className="px-4 py-3 rounded-lg border border-border-secondary focus:outline-none focus:border-brand-primary"
             />
           </div>
@@ -92,20 +98,21 @@ const ProfileSettings = () => {
 
         {/* Footer Actions */}
         <div className="flex justify-end gap-4 pt-6 border-t border-line">
-          <button
-            type="button"
-            className="px-8 py-2.5 rounded-lg border border-border-secondary text-text-title font-medium hover:bg-bg-soft transition-colors"
+          <Button
+            variant='outline'
+            type='button'
+            onClick={()=> reset()}
+            className='text-base px-8 py-2.5 rounded-lg border border-border-secondary text-text-title font-medium hover:bg-bg-soft'
           >
             Cancel
-          </button>
-          
-          <button
-            type="submit"
+          </Button>
+          <Button
+            type='submit'
+            className='text-base px-8 py-2.5 rounded-lg text-white font-medium hover:opacity-85 disabled:opacity-50 shadow-sm'
             disabled={!isValid || isSubmitting}
-            className="px-8 py-2.5 rounded-lg bg-brand-primary text-text-primary01 font-semibold hover:opacity-90 disabled:opacity-50 transition-all shadow-sm"
           >
             {isSubmitting ? 'Saving...' : 'Save Changes'}
-          </button>
+          </Button>
         </div>
       </form>
     </div>

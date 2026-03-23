@@ -92,7 +92,7 @@ const StatusBadge = memo(({ status }: { status: UserStatus }) => {
     Deactivated: "bg-red-50   text-red-400",
   };
   return (
-    <span className={`inline-flex px-3 py-1 rounded-full text-xs font-medium ${styles[status]}`}>
+    <span className={`inline-flex px-3 py-1 rounded-lg text-xs font-medium ${styles[status]}`}>
       {status}
     </span>
   );
@@ -274,6 +274,7 @@ const TeamMembersTable = () => {
         <Button
           variant="primary"
           size="md"
+          className="text-white"
           leftIcon={<Plus className="w-4 h-4" />}
           onClick={handleInvite}
         >

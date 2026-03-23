@@ -40,7 +40,6 @@ const AppRouter = () => {
             <Route index element={<ProjectsPage />} />          
             <Route path=":slug" element={<ProjectDetailsPage />}>
               <Route index element={<ProjectOverview />} />
-              <Route path="overview"   element={<ProjectOverview />} />
               <Route path="metrics"    element={<ProjectMetrics />} />
               <Route path="documents"  element={<ProjectDocuments />} />
             </Route>

@@ -1,9 +1,9 @@
 import PageTitle from "@/shared/components/PageTitle"
 import { type StatCardProps, StatCard } from "../components/StatCard"
-import CSRProgressChart from "../components/LineChart"
-import BudgetAllocationChart from "../components/PieChart"
 import RecentRow from "../ui/RecentRow"
 import PageTransition from "@/shared/components/PageTransition"
+import { DonutChart } from "@/shared/components/DonutChart"
+import { LineChartMain } from "@/shared/components/LineChart"
 
 // mock data
 const statInfo: StatCardProps[] = [
@@ -47,6 +47,21 @@ const statInfo: StatCardProps[] = [
         index: 4
     },
 ]
+const donutChart_data = [
+  { name: "Environmental", value: 45, color: "hsla(44, 100%, 52%, 1)" },
+  { name: "Social",         value: 35, color: "hsla(147, 45%, 48%, 1)" },
+  { name: "Governance",     value: 20, color: "hsla(0, 94%, 48%, 1)" },
+];
+const lineChart_data = [
+  { month: "Jan", score: 64 },
+  { month: "Feb", score: 68 },
+  { month: "Mar", score: 72 },
+  { month: "Apr", score: 69 },
+  { month: "May", score: 75 },
+  { month: "Jun", score: 78 },
+  { month: "Jul", score: 82 },
+  { month: "Aug", score: 86 },
+];
 const UserOverview = () => {
   return (
         <PageTransition>
@@ -77,8 +92,17 @@ const UserOverview = () => {
 
         {/* analytics */}
         <section className="flex gap-6">
-            <CSRProgressChart/>
-            <BudgetAllocationChart/>
+           <LineChartMain 
+                data={lineChart_data}
+                ticks={[0, 25, 50, 75, 100]}
+                title="CSR Progress Over Time"
+                subtitle="Monthly performance tracking"
+           />
+            <DonutChart 
+                items={donutChart_data}
+                header="Budget Allocation"
+                subHead="Distribution by category"
+            />
         </section>
 
             {/* recent activities */}

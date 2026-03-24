@@ -21,7 +21,7 @@ const ProfileSettings = () => {
 
   return (
     <div className="mx-auto bg-white p-8 rounded-xl card-shadow font-jakarta border border-line">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-7">
         
         {/* Organization Logo */}
         <div className="space-y-2">

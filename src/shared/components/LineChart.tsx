@@ -1,28 +1,15 @@
-// import { useState } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-// mock data inplace of backend data
-const hardcodedData = [
-  { month: "Jan", score: 64 },
-  { month: "Feb", score: 68 },
-  { month: "Mar", score: 72 },
-  { month: "Apr", score: 69 },
-  { month: "May", score: 75 },
-  { month: "Jun", score: 78 },
-  { month: "Jul", score: 82 },
-  { month: "Aug", score: 86 },
-];
-
-interface DataPoint {
+export interface DataPoint {
   month: string;
   score: number;
 }
 
 interface CSRProgressChartProps {
-  title?: string;
+  title: string;
   subtitle?: string;
-  data?: DataPoint[];
-  color?: string;
+  data: DataPoint[];
+  ticks?: number[]
 }
 
 const CustomTooltip = ({
@@ -57,17 +44,17 @@ const lineChartStyle = {
     }
 }
 
-const CSRProgressChart = ({
-  title = "CSR Progress Over Time",
-  subtitle = "Monthly performance tracking",
-  data = hardcodedData,
-  color = "hsl(45, 100%, 51%)",
+export const LineChartMain = ({
+  title,
+  subtitle,
+  data,
+  ticks
 }: CSRProgressChartProps) => {
     // const [animated, setAnimated] = useState(true)
   return (
-    <div className="w-full bg-white rounded-3xl border border-line p-6 font-lato">
+    <div className="w-full bg-white rounded-3xl border border-line p-6 font-lato card-shadow">
       {/* Header */}
-      <h2 className="text-lg font-semibold text-text-primary01">{title}</h2>
+      <h2 className={`text-lg font-semibold text-text-primary01 ${!subtitle && 'mb-6'}`}>{title}</h2>
       <p className="text-sm text-text-body mb-6">{subtitle}</p>
 
       <ResponsiveContainer width="100%" height={320}>
@@ -92,7 +79,7 @@ const CSRProgressChart = ({
 
           <YAxis
             domain={[0, 100]}
-            ticks={[0, 25, 50, 75, 100]}
+            ticks={ticks}
             axisLine={lineChartStyle.axisLine}
             tickLine={lineChartStyle.tickLineStyle}
             tick={lineChartStyle.tickStyle}
@@ -104,10 +91,10 @@ const CSRProgressChart = ({
           <Line
             type="monotone"
             dataKey="score"
-            stroke={color}
+            stroke='hsl(45, 100%, 51%)'
             strokeWidth={2.5}
-            dot={{ r: 5, fill: color, strokeWidth: 0 }}
-            activeDot={{ r: 7, fill: color, strokeWidth: 0 }}
+            dot={{ r: 5, fill: 'hsl(45, 100%, 51%)', strokeWidth: 0 }}
+            activeDot={{ r: 7, fill: 'hsl(45, 100%, 51%)', strokeWidth: 0 }}
             // isAnimationActive={animated}
             // onAnimationEnd={() => setAnimated(false)}
             animationDuration={1200}
@@ -119,5 +106,3 @@ const CSRProgressChart = ({
     </div>
   );
 };
-
-export default CSRProgressChart;

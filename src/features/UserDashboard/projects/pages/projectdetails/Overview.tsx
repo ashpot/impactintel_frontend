@@ -63,7 +63,7 @@ const StatCard = ({title, Icon, bigText, summary}:statProps)=>{
 // main component
 const Overview = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-7">
       {/* overview intro */}
      <section>
       <div className="border border-line bg-white space-y-4 p-6 rounded-2xl">

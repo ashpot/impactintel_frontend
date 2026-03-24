@@ -1,9 +1,9 @@
 import PageTitle from "@/shared/components/PageTitle"
 import Button from "@/shared/ui/Button"
 import { CalendarDays } from "lucide-react"
-import Drop from "../components/Drop"
 import UploadTable from "../components/UploadTable"
 import PageTransition from "@/shared/components/PageTransition"
+import Drop from "@/shared/components/Drop"
 
 const UploadsPage = () => {
   return (

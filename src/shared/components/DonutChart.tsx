@@ -1,10 +1,14 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-
-const data = [
-  { name: "Environmental", value: 45, color: "hsla(44, 100%, 52%, 1)" },
-  { name: "Social",         value: 35, color: "hsla(147, 45%, 48%, 1)" },
-  { name: "Governance",     value: 20, color: "hsla(0, 94%, 48%, 1)" },
-];
+export interface dataType{
+    name: string
+    value: number
+    color:string
+}
+interface donutChartProps{
+    items: dataType[]
+    header: string
+    subHead?: string
+}
 
 const CustomTooltip = ({
   active,
@@ -26,18 +30,18 @@ const CustomTooltip = ({
   return null;
 };
 
-const BudgetAllocationChart = () => {
+export const DonutChart = ({items, header, subHead}:donutChartProps) => {
   return (
-    <div className="bg-white rounded-3xl border border-line w-[55%] p-6 font-lato">
+    <div className="bg-white rounded-3xl border border-line w-full p-6 font-lato card-shadow">
       {/* Header */}
-      <h2 className="text-lg font-semibold text-text-primary01">
-        Budget Allocation
+      <h2 className={`text-lg font-semibold text-text-primary01 ${!subHead && 'mb-4'}`}>
+        {header}
       </h2>
-      <p className="text-sm text-text-body mb-4">Distribution by category</p>
+      {subHead && <p className="text-sm text-text-body mb-4">{subHead}</p>}
       <ResponsiveContainer width="100%" height={240}>
         <PieChart>
           <Pie
-            data={data}
+            data={items}
             cx="50%"
             cy="50%"
             innerRadius={75}   
@@ -50,7 +54,7 @@ const BudgetAllocationChart = () => {
             animationDuration={1200}
             animationEasing="ease-out"
           >
-            {data.map((entry, index) => (
+            {items.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={entry.color}
@@ -64,7 +68,7 @@ const BudgetAllocationChart = () => {
 
       {/* Legend */}
       <div className="flex flex-col gap-3 mt-2">
-        {data.map((entry) => (
+        {items.map((entry) => (
           <div key={entry.name} className="flex items-center justify-between ">
             <div className="flex items-center gap-2.5">
               {/* Colored dot */}
@@ -83,5 +87,3 @@ const BudgetAllocationChart = () => {
     </div>
   );
 };
-
-export default BudgetAllocationChart;

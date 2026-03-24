@@ -10,7 +10,7 @@ const AccountSettings = () => {
   const onSaveSettings = (data: any) => console.log("Saving Preferences...", data);
 
   return (
-    <div className="space-y-8 font-jakarta mx-auto border border-line bg-white p-6 rounded-xl card-shadow">
+    <div className="space-y-7 font-jakarta mx-auto border border-line bg-white p-6 rounded-xl card-shadow">
       {/* Change Password Section */}
       <section className={sectionBorder}>
         <h3 className="text-base font-semibold text-text-primary01 mb-4">Change Password</h3>

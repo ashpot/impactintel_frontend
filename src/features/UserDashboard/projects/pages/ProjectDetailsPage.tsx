@@ -8,6 +8,7 @@ import { Outlet, useNavigate, useParams } from "react-router-dom"
 
 const ProjectDetailsPage = () => {
     const {slug} = useParams()
+    const title = slug?.replaceAll('-', ' ')
     const navigate = useNavigate()
     const navItems: Omit<NavItem, 'icon'>[] = [
       { 
@@ -46,7 +47,7 @@ const ProjectDetailsPage = () => {
         <section className="flex justify-between items-center">
 
           <div className="space-y-3">
-            <h3 className="font-semibold text-text-primary01 text-4xl tracking-wide">Clean Water Initiative</h3>
+            <h3 className="font-semibold text-text-primary01 text-4xl tracking-wide capitalize">{title}</h3>
             <div className="flex gap-3 items-center">
               <div
                 className="text-sm font-medium text-success px-3 py-1.5 border border-[#98EDB2] bg-[#E6FBEC] rounded-full"

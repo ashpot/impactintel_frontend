@@ -39,6 +39,7 @@ const UserDashboardNav = () => {
           {navItems.map(({ id, label, path, icon: Icon }) => (
             <li key={id}>
               <NavLink
+              key={id}
                 to={path}
                 end={path === "/dashboard"}
                 className={({ isActive }) => `

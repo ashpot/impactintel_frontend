@@ -83,6 +83,7 @@ const Overview = () => {
         {statCardInfo.map(({title, Icon, bigText, summary})=>{
           return(
             <StatCard 
+              key={bigText}
               title={title}
               Icon={Icon}
               bigText={bigText}

@@ -2,7 +2,7 @@ import avatar from "@/assets/images/testimonial_avatar_03.png"
 
 const RecentRow = () => {
   return (
-    <div className="border-b border-line flex items-center px-5 pt-5 pb-3">
+    <div className="border-b border-line flex items-center px-5 pt-5 pb-3 hover:bg-nav-active/40 hover:cursor-pointer">
         {/* title + body */}
         <div className="w-full max-w-xl">
             <h3 className="text-text-primary01 text-sm font-medium ">Clear Water Initiative</h3>

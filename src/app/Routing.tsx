@@ -9,6 +9,7 @@ import { UploadsPage } from "@/features/UserDashboard/uploads";
 import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
 import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
 import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
+import ScreenGuard from "@/shared/components/ScreenGuard";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -26,13 +27,21 @@ const AppRouter = () => {
             <Route index element={<LandingPage/>}/>
         </Route>
 
-        {/* Auth routes */}
-        <Route element={<AuthLayout/>}>
+        {/* Auth routes protected by screen guard only giving access the screen users of <768 */}
+        <Route element={
+          <ScreenGuard>
+            <AuthLayout/>
+          </ScreenGuard>
+          }>
             <Route path="/login" element={<LoginPage/>}/>
         </Route>
 
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<UserDashboardLayout/>}>
+        <Route path="/dashboard" element={
+          <ScreenGuard>
+            <UserDashboardLayout/>
+          </ScreenGuard>
+        }>
           <Route index element={<Overview />} />
 
 
@@ -56,6 +65,8 @@ const AppRouter = () => {
             <Route path="integrations" element={<Integrations />} />
             <Route path="user-management" element={<UserManagement />} />
           </Route>
+
+
       </Route>
     </Routes>
     </AnimatePresence>

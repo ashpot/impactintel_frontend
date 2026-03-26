@@ -1,33 +1,75 @@
-import { Routes, Route } from "react-router-dom";
-import PublicLayout from "@/app/layouts/PublicLayout";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { LandingPage } from "@/features/public";
-import AuthLayout from "./layouts/AuthLayout";
 import { LoginPage } from "@/features/auth";
-import UserDashboardLayout from "./layouts/UserDashboardLayout";
-import { UserOverview } from "@/features/overview";
+import { Overview } from "@/features/UserDashboard/overview";
+import {ProjectDetailsPage, ProjectDocuments, ProjectMetrics, ProjectOverview, ProjectsPage} from "@/features/UserDashboard/projects";
+import { AnimatePresence } from "framer-motion";
+import { ReportsPage } from "@/features/UserDashboard/reports";
+import { UploadsPage } from "@/features/UserDashboard/uploads";
+import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
+import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
+import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
+import ScreenGuard from "@/shared/components/ScreenGuard";
+
 const AppRouter = () => {
+  const location = useLocation();
+  const getSubRouteKey = () => {
+    if (location.pathname.startsWith('/dashboard/settings')) {
+      return '/dashboard/settings'; 
+    }
+    return location.pathname;
+  };
   return (
-    <Routes>
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={getSubRouteKey()}>
         {/* public */}
-        <Route element={<PublicLayout/>}>
+        <Route element={<PublicLayout />}>
             <Route index element={<LandingPage/>}/>
         </Route>
 
-        {/* Auth routes */}
-        <Route element={<AuthLayout/>}>
+        {/* Auth routes protected by screen guard only giving access the screen users of <768 */}
+        <Route element={
+          <ScreenGuard>
+            <AuthLayout/>
+          </ScreenGuard>
+          }>
             <Route path="/login" element={<LoginPage/>}/>
         </Route>
 
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<UserDashboardLayout/>}>
-          <Route index element={<UserOverview />} />
-          {/* <Route path="projects" element={<ProjectsPage />} /> */}
-          {/* <Route path="reports" element={<ReportsPage />} /> */}
-          {/* <Route path="uploads" element={<UploadsPage />} /> */}
-          {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}
-          {/* <Route path="settings" element={<SettingsPage />} /> */}
+        <Route path="/dashboard" element={
+          <ScreenGuard>
+            <UserDashboardLayout/>
+          </ScreenGuard>
+        }>
+          <Route index element={<Overview />} />
+
+
+          <Route path="projects">
+            <Route index element={<ProjectsPage />} />          
+            <Route path=":slug" element={<ProjectDetailsPage />}>
+              <Route index element={<ProjectOverview />} />
+              <Route path="metrics"    element={<ProjectMetrics />} />
+              <Route path="documents"  element={<ProjectDocuments />} />
+            </Route>
+          </Route>
+
+
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="uploads" element={<UploadsPage />} />
+          <Route path="public-summary" element={<PublicSummaryPage />} />
+
+          <Route path="settings" element={<SettingsLayout />} >
+            <Route index element={<OrganizationProfile />} />
+            <Route path="account-settings" element={<AccountSettings />} />
+            <Route path="integrations" element={<Integrations />} />
+            <Route path="user-management" element={<UserManagement />} />
+          </Route>
+
+
       </Route>
     </Routes>
+    </AnimatePresence>
   )
 }
 export default AppRouter

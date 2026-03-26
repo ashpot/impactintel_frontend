@@ -1,0 +1,5 @@
+export {default as ProjectsPage} from "@/features/UserDashboard/projects/pages/ProjectsPage"
+export {default as ProjectDetailsPage} from "@/features/UserDashboard/projects/pages/ProjectDetailsPage"
+export {default as ProjectOverview} from "@/features/UserDashboard/projects/pages/projectdetails/Overview"
+export {default as ProjectMetrics} from "@/features/UserDashboard/projects/pages/projectdetails/Metrics"
+export {default as ProjectDocuments} from "@/features/UserDashboard/projects/pages/projectdetails/Documents"

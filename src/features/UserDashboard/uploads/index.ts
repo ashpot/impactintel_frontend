@@ -1,0 +1,1 @@
+export {default as UploadsPage} from "@/features/UserDashboard/uploads/pages/UploadsPage"

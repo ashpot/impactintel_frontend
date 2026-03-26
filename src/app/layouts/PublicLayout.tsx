@@ -10,7 +10,7 @@ const PublicLayout = () => {
       <SideNav />
       <MobileNav />
       <main className="min-h-screen">
-        <Outlet />
+          <Outlet/>
       </main>
     </>
   );

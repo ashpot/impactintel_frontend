@@ -4,6 +4,7 @@ import { cn } from '@/shared/utils/cn';
 import brandLogo from '@/assets/brand/brand_logo.png';
 import RequestBtn from '@/features/public/ui/RequestBtn';
 import { useScrollNav } from '@/shared/hooks/Usescrollnav';
+import { Link } from 'react-router-dom';
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -143,18 +144,23 @@ const MobileNav = () => {
               transition={{ delay: 0.3, duration: 0.25 }}
               className="relative px-7 pb-10 space-y-3"
             >
-              <button
-                className={cn(
-                  'w-full py-3.5 rounded-full font-lato font-medium text-base',
-                  'border border-white/20 text-text-muted',
-                  'transition-all duration-300',
-                  'hover:bg-white/8 hover:border-white/35 hover:text-white'
-                )}
+              <Link
+                to='/login'
               >
-                Client Login
-              </button>
+                <button
+                  className={cn(
+                    'w-full py-3.5 rounded-full font-lato font-medium text-base',
+                    'border border-white/20 text-text-muted',
+                    'transition-all duration-300',
+                    'hover:bg-white/8 hover:border-white/35 hover:text-white'
+                  )}
+                >
+                  Client Login
+                </button>
+              </Link>
+              
               {/* Reuse your existing RequestBtn — it's already full-width-capable */}
-              <div className="[&>button]:w-full [&>a]:w-full">
+              <div className="[&>button]:w-full [&>a]:w-full mt-3">
                 <RequestBtn />
               </div>
             </motion.div>

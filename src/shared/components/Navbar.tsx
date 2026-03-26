@@ -2,6 +2,7 @@ import brandLogo from '@/assets/brand/brand_logo.png';
 import { cn } from '@/shared/utils/cn';
 import RequestBtn from '@/features/public/ui/RequestBtn';
 import { useScrollNav } from '@/shared/hooks/Usescrollnav';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { showSideNav, activeSection, scrollTo, SECTIONS } = useScrollNav();
@@ -21,7 +22,7 @@ const Navbar = () => {
     >
       <section className='py-7 flex items-center justify-between'>
         {/* Logo */}
-        <div className='w-[250px]'>
+        <div className='w-62.5'>
           <img src={brandLogo} alt="brand logo" />
         </div>
 
@@ -54,7 +55,10 @@ const Navbar = () => {
 
         {/* Quick actions */}
         <div className='space-x-2 flex'>
-          <button
+          <Link
+            to='/login'
+          >
+            <button
             className={cn(
               'border-border-primary text-text-muted',
               'hover:bg-brand-primary hover:border-bg-brand-primary hover:text-text-title',
@@ -63,6 +67,8 @@ const Navbar = () => {
           >
             Client Login
           </button>
+          </Link>
+          
           <RequestBtn />
         </div>
       </section>

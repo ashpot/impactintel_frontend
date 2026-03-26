@@ -10,6 +10,7 @@ import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
 import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
 import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
 import ScreenGuard from "@/shared/components/ScreenGuard";
+import PageTransition from "@/shared/components/PageTransition";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const AppRouter = () => {
             <AuthLayout/>
           </ScreenGuard>
           }>
-            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/login" element={<PageTransition><LoginPage/></PageTransition>}/>
         </Route>
 
         {/* dashboard routes */}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import loginLogo from '@/assets/brand/brandLogo_login.png'
 import Slider from "../components/Slider";
+import { useNavigate } from "react-router-dom";
 
 const EyeIcon = ({ open }: { open: boolean }) => (
   <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -19,9 +20,13 @@ const EyeIcon = ({ open }: { open: boolean }) => (
 
 
 const LoginPage = ()=>{
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const handleLogin = ()=>{
+    navigate('/dashboard')
+  }
 
   return (
     <div
@@ -42,7 +47,7 @@ const LoginPage = ()=>{
             <img 
               src={loginLogo} 
               alt="brand logo" 
-              className="w-[230px]"
+              className="w-57.5"
             />
           </div>
 
@@ -122,7 +127,7 @@ const LoginPage = ()=>{
 
             {/* Login button */}
             <button
-            //   onClick={handleLogin}
+              onClick={handleLogin}
             //   disabled={isLoading}
               className="bg-brand-primary w-full py-3.5 rounded-full font-bold text-gray-900 text-base transition-all duration-200 flex items-center justify-center gap-2"
               style={{

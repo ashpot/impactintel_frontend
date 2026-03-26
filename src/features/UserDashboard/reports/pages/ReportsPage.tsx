@@ -7,6 +7,9 @@ import GenReportsCard from "../components/GenReportsCard"
 import BuildCustomReport from "../components/BuildCustomReport"
 import ReportsTable from "../components/ReportsTable"
 import PageTransition from "@/shared/components/PageTransition"
+import gen1 from '/src/assets/icons/chart.svg'
+import gen2 from '/src/assets/icons/trendReport.svg'
+import gen3 from '/src/assets/icons/medal.svg'
 
 const generateReportInfo:Omit<genProps, 'index'>[] = [
     {
@@ -14,21 +17,21 @@ const generateReportInfo:Omit<genProps, 'index'>[] = [
         bodyText: 'Comprehensive analysis of SDG alignment and impact',
         iconBorder: 'hsla(47, 100%, 82%, 1)',
         iconBg: 'hsla(46, 100%, 96%, 1)',
-        iconSrc: '/src/assets/icons/chart.svg'
+        iconSrc: gen1
     },
     {
         title: 'Financial Report',
         bodyText: 'Budget utilization across all projects',
         iconBorder: 'hsla(138, 70%, 76%, 1)',
         iconBg: 'hsla(137, 72%, 94%, 1)',
-        iconSrc: '/src/assets/icons/trendReport.svg'
+        iconSrc: gen2
     },    
     {
         title: 'Impact Scorecard',
         bodyText: 'GRI-aligned sustainability scorecard',
         iconBorder: 'hsla(210, 2%, 78%, 1)',
         iconBg: 'hsla(0, 0%, 91%, 1)',
-        iconSrc: '/src/assets/icons/medal.svg'
+        iconSrc: gen3
     },
 ]
 const ReportsPage = () => {

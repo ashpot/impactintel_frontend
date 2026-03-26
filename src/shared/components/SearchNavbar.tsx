@@ -4,11 +4,12 @@ import search from "@/assets/icons/search.svg";
 import bell from "@/assets/icons/notification.svg";
 import { cn } from "../utils/cn";
 import { Menu } from "lucide-react";
+import userAvatar from "/src/assets/images/testimonial_avatar_03.png"
 
 const user = {
   name: "Sarah Johnson",
   role: "Admin",
-  avatar: "/src/assets/images/testimonial_avatar_03.png",
+  avatar: userAvatar,
 };
 
 const SearchNavbar = ({ onMenuClick }: { onMenuClick: () => void }) => {

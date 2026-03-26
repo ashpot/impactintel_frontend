@@ -16,6 +16,9 @@ import {
   File,
 } from "lucide-react";
 import Button from "@/shared/ui/Button";
+import avatar01 from '/src/assets/images/testimonial_avatar_01.png'
+import avatar02 from '/src/assets/images/testimonial_avatar_02.png'
+import avatar03 from '/src/assets/images/testimonial_avatar_03.png'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -43,16 +46,16 @@ interface UploadedReportsResponse {
 // ─── Mock data — replace fetchUploadedReports body with real fetch ────────────
 
 const MOCK: UploadedReport[] = [
-  { id: "1",  name: "Water Project Report Q2",  fileType: "PDF",   uploadedBy: { name: "Sarah Johnson",  avatar: "/src/assets/images/testimonial_avatar_03.png"   }, date: "Jul 09, 2025", status: "Approved" },
-  { id: "2",  name: "Beneficiary Photos",        fileType: "Image", uploadedBy: { name: "Tobias Monty",   avatar: "/src/assets/images/testimonial_avatar_02.png"  }, date: "Jun 26, 2025", status: "Approved" },
-  { id: "3",  name: "Impact Assessment",         fileType: "Excel", uploadedBy: { name: "Sarah Johnson",  avatar: "/src/assets/images/testimonial_avatar_03.png"  }, date: "Jun 17, 2025", status: "Pending"  },
-  { id: "4",  name: "Training Attendance",       fileType: "PDF",   uploadedBy: { name: "Ben Sunnak",     avatar: "/src/assets/images/testimonial_avatar_01.png"  }, date: "Jun 10, 2025", status: "Approved" },
-  { id: "5",  name: "Site Visit Images",         fileType: "Image", uploadedBy: { name: "Jessy Liu",      avatar: "/src/assets/images/testimonial_avatar_02.png"  }, date: "Jun 06, 2025", status: "Pending"  },
-  { id: "6",  name: "Water Project Report Q2",  fileType: "PDF",   uploadedBy: { name: "Sarah Johnson",  avatar: "/src/assets/images/testimonial_avatar_03.png"   }, date: "Jul 09, 2025", status: "Approved" },
-  { id: "7",  name: "Beneficiary Photos",        fileType: "Image", uploadedBy: { name: "Tobias Monty",   avatar: "/src/assets/images/testimonial_avatar_02.png"  }, date: "Jun 26, 2025", status: "Approved" },
-  { id: "8",  name: "Impact Assessment",         fileType: "Excel", uploadedBy: { name: "Sarah Johnson",  avatar: "/src/assets/images/testimonial_avatar_03.png"  }, date: "Jun 17, 2025", status: "Pending"  },
-  { id: "9",  name: "Training Attendance",       fileType: "PDF",   uploadedBy: { name: "Ben Sunnak",     avatar: "/src/assets/images/testimonial_avatar_01.png"  }, date: "Jun 10, 2025", status: "Approved" },
-  { id: "10", name: "Site Visit Images",         fileType: "Image", uploadedBy: { name: "Jessy Liu",      avatar: "/src/assets/images/testimonial_avatar_02.png"  }, date: "Jun 06, 2025", status: "Pending"  },
+  { id: "1",  name: "Water Project Report Q2",  fileType: "PDF",   uploadedBy: { name: "Sarah Johnson",  avatar: avatar01   }, date: "Jul 09, 2025", status: "Approved" },
+  { id: "2",  name: "Beneficiary Photos",        fileType: "Image", uploadedBy: { name: "Tobias Monty",   avatar: avatar02  }, date: "Jun 26, 2025", status: "Approved" },
+  { id: "3",  name: "Impact Assessment",         fileType: "Excel", uploadedBy: { name: "Sarah Johnson",  avatar: avatar03  }, date: "Jun 17, 2025", status: "Pending"  },
+  { id: "4",  name: "Training Attendance",       fileType: "PDF",   uploadedBy: { name: "Ben Sunnak",     avatar: avatar01  }, date: "Jun 10, 2025", status: "Approved" },
+  { id: "5",  name: "Site Visit Images",         fileType: "Image", uploadedBy: { name: "Jessy Liu",      avatar: avatar02 }, date: "Jun 06, 2025", status: "Pending"  },
+  { id: "6",  name: "Water Project Report Q2",  fileType: "PDF",   uploadedBy: { name: "Sarah Johnson",  avatar: avatar03   }, date: "Jul 09, 2025", status: "Approved" },
+  { id: "7",  name: "Beneficiary Photos",        fileType: "Image", uploadedBy: { name: "Tobias Monty",   avatar: avatar01  }, date: "Jun 26, 2025", status: "Approved" },
+  { id: "8",  name: "Impact Assessment",         fileType: "Excel", uploadedBy: { name: "Sarah Johnson",  avatar: avatar02  }, date: "Jun 17, 2025", status: "Pending"  },
+  { id: "9",  name: "Training Attendance",       fileType: "PDF",   uploadedBy: { name: "Ben Sunnak",     avatar: avatar03  }, date: "Jun 10, 2025", status: "Approved" },
+  { id: "10", name: "Site Visit Images",         fileType: "Image", uploadedBy: { name: "Jessy Liu",      avatar: avatar01  }, date: "Jun 06, 2025", status: "Pending"  },
 
   ];
 

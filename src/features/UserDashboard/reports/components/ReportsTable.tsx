@@ -9,6 +9,9 @@ import {
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { ChevronLeft, ChevronRight, Eye, Download, Share2 } from "lucide-react";
 import Button from "@/shared/ui/Button";
+import avatar01 from '/src/assets/images/testimonial_avatar_01.png'
+import avatar02 from '/src/assets/images/testimonial_avatar_02.png'
+import avatar03 from '/src/assets/images/testimonial_avatar_03.png'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -32,16 +35,16 @@ interface ReportsResponse {
 // ─── API — swap with your real endpoint ──────────────────────────────────────
 
 const MOCK_REPORTS: Report[] = [
-  { id: "1",  name: "Q3 SDG Impact Summary",    type: "SDG Report",       dateGenerated: "Nov 1, 2025",  generatedBy: { name: "Sarah Johnson", avatar: "/src/assets/images/testimonial_avatar_03.png"  } },
-  { id: "2",  name: "October Budget Analysis",   type: "Financial",        dateGenerated: "Oct 28, 2025", generatedBy: { name: "David Ibe",      avatar: "/src/assets/images/testimonial_avatar_02.png"  } },
-  { id: "3",  name: "Annual Impact Report 2024", type: "Custom",           dateGenerated: "Oct 15, 2025", generatedBy: { name: "Lisa Anderson",  avatar: "/src/assets/images/testimonial_avatar_01.png"   } },
-  { id: "4",  name: "Q2 Performance Review",     type: "Impact Scorecard", dateGenerated: "Oct 5, 2025",  generatedBy: { name: "Emily Davis",    avatar: "/src/assets/images/testimonial_avatar_02.png"  } },
-  { id: "5",  name: "ESG Compliance Report",     type: "SDG Report",       dateGenerated: "Sep 20, 2025", generatedBy: { name: "Marcus Chen",    avatar: "/src/assets/images/testimonial_avatar_03.png" } },
-  { id: "1",  name: "Q3 SDG Impact Summary",    type: "SDG Report",       dateGenerated: "Nov 1, 2025",  generatedBy: { name: "Sarah Johnson", avatar: "/src/assets/images/testimonial_avatar_03.png"  } },
-  { id: "2",  name: "October Budget Analysis",   type: "Financial",        dateGenerated: "Oct 28, 2025", generatedBy: { name: "David Ibe",      avatar: "/src/assets/images/testimonial_avatar_02.png"  } },
-  { id: "3",  name: "Annual Impact Report 2024", type: "Custom",           dateGenerated: "Oct 15, 2025", generatedBy: { name: "Lisa Anderson",  avatar: "/src/assets/images/testimonial_avatar_01.png"   } },
-  { id: "4",  name: "Q2 Performance Review",     type: "Impact Scorecard", dateGenerated: "Oct 5, 2025",  generatedBy: { name: "Emily Davis",    avatar: "/src/assets/images/testimonial_avatar_02.png"  } },
-  { id: "5",  name: "ESG Compliance Report",     type: "SDG Report",       dateGenerated: "Sep 20, 2025", generatedBy: { name: "Marcus Chen",    avatar: "/src/assets/images/testimonial_avatar_03.png" } },
+  { id: "1",  name: "Q3 SDG Impact Summary",    type: "SDG Report",       dateGenerated: "Nov 1, 2025",  generatedBy: { name: "Sarah Johnson", avatar: avatar01  } },
+  { id: "2",  name: "October Budget Analysis",   type: "Financial",        dateGenerated: "Oct 28, 2025", generatedBy: { name: "David Ibe",      avatar: avatar02  } },
+  { id: "3",  name: "Annual Impact Report 2024", type: "Custom",           dateGenerated: "Oct 15, 2025", generatedBy: { name: "Lisa Anderson",  avatar: avatar03   } },
+  { id: "4",  name: "Q2 Performance Review",     type: "Impact Scorecard", dateGenerated: "Oct 5, 2025",  generatedBy: { name: "Emily Davis",    avatar: avatar01  } },
+  { id: "5",  name: "ESG Compliance Report",     type: "SDG Report",       dateGenerated: "Sep 20, 2025", generatedBy: { name: "Marcus Chen",    avatar: avatar02 } },
+  { id: "1",  name: "Q3 SDG Impact Summary",    type: "SDG Report",       dateGenerated: "Nov 1, 2025",  generatedBy: { name: "Sarah Johnson", avatar: avatar03  } },
+  { id: "2",  name: "October Budget Analysis",   type: "Financial",        dateGenerated: "Oct 28, 2025", generatedBy: { name: "David Ibe",      avatar: avatar01  } },
+  { id: "3",  name: "Annual Impact Report 2024", type: "Custom",           dateGenerated: "Oct 15, 2025", generatedBy: { name: "Lisa Anderson",  avatar: avatar02   } },
+  { id: "4",  name: "Q2 Performance Review",     type: "Impact Scorecard", dateGenerated: "Oct 5, 2025",  generatedBy: { name: "Emily Davis",    avatar: avatar03  } },
+  { id: "5",  name: "ESG Compliance Report",     type: "SDG Report",       dateGenerated: "Sep 20, 2025", generatedBy: { name: "Marcus Chen",    avatar: avatar01 } },
 ];
 
 // async/await — swap the body with your real fetch:

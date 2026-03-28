@@ -165,3 +165,55 @@ export const Calendar = ({className, stroke = 'currentColor'}:svgProps)=>{
     </svg>
   )
 }
+export const Audit = ({className, stroke = 'currentColor'}:svgProps)=>{
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <path d="M17.0833 9.41649V5.86651C17.0833 2.50818 16.3 1.6665 13.15 1.6665H6.85C3.7 1.6665 2.91667 2.50818 2.91667 5.86651V15.2498C2.91667 17.4665 4.13334 17.9915 5.60834 16.4082L5.61666 16.3998C6.29999 15.6748 7.34166 15.7332 7.93333 16.5248L8.775 17.6498" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15.1667 17.8333C16.6394 17.8333 17.8333 16.6394 17.8333 15.1667C17.8333 13.6939 16.6394 12.5 15.1667 12.5C13.6939 12.5 12.5 13.6939 12.5 15.1667C12.5 16.6394 13.6939 17.8333 15.1667 17.8333Z" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18.3333 18.3333L17.5 17.5" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6.66667 5.8335H13.3333" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7.5 9.1665H12.5" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+export const Report01 = ({className, stroke = 'currentColor'}:svgProps)=>{
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <path d="M18.3333 8.33317V12.4998C18.3333 16.6665 16.6667 18.3332 12.5 18.3332H7.5C3.33333 18.3332 1.66667 16.6665 1.66667 12.4998V7.49984C1.66667 3.33317 3.33333 1.6665 7.5 1.6665H11.6667" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18.3333 8.33317H15C12.5 8.33317 11.6667 7.49984 11.6667 4.99984V1.6665L18.3333 8.33317Z" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M5.83333 10.8335H10.8333" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M5.83333 14.1665H9.16667" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+export const Approval = ({className, stroke = 'currentColor'}:svgProps)=>{
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <path d="M7.75833 12.2498L9.00833 13.4998L12.3417 10.1665" stroke={stroke} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8.33333 4.99984H11.6667C13.3333 4.99984 13.3333 4.1665 13.3333 3.33317C13.3333 1.6665 12.5 1.6665 11.6667 1.6665H8.33333C7.5 1.6665 6.66667 1.6665 6.66667 3.33317C6.66667 4.99984 7.5 4.99984 8.33333 4.99984Z" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M13.3333 3.3501C16.1083 3.5001 17.5 4.5251 17.5 8.33343V13.3334C17.5 16.6668 16.6667 18.3334 12.5 18.3334H7.5C3.33333 18.3334 2.5 16.6668 2.5 13.3334V8.33343C2.5 4.53343 3.89167 3.5001 6.66667 3.3501" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+export const Organization = ({className, stroke = 'currentColor'}:svgProps)=>{
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <path d="M10.8333 18.3332H4.16667C2.5 18.3332 1.66667 17.4998 1.66667 15.8332V9.1665C1.66667 7.49984 2.5 6.6665 4.16667 6.6665H8.33333V15.8332C8.33333 17.4998 9.16667 18.3332 10.8333 18.3332Z" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8.42499 3.3335C8.35832 3.5835 8.33333 3.8585 8.33333 4.16683V6.66683H4.16667V5.00016C4.16667 4.0835 4.91667 3.3335 5.83333 3.3335H8.42499Z" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M11.6667 6.6665V10.8332" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 6.6665V10.8332" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14.1667 14.1665H12.5C12.0417 14.1665 11.6667 14.5415 11.6667 14.9998V18.3332H15V14.9998C15 14.5415 14.625 14.1665 14.1667 14.1665Z" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M5 10.8335V14.1668" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8.33333 15.8332V4.1665C8.33333 2.49984 9.16667 1.6665 10.8333 1.6665H15.8333C17.5 1.6665 18.3333 2.49984 18.3333 4.1665V15.8332C18.3333 17.4998 17.5 18.3332 15.8333 18.3332H10.8333C9.16667 18.3332 8.33333 17.4998 8.33333 15.8332Z" stroke={stroke} strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+export const Pending = ({className, stroke = 'currentColor'}:svgProps)=>{
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <path d="M9.99996 18.3332C14.6023 18.3332 18.3333 14.6022 18.3333 9.99984C18.3333 5.39746 14.6023 1.6665 9.99996 1.6665C5.39759 1.6665 1.66663 5.39746 1.66663 9.99984C1.66663 14.6022 5.39759 18.3332 9.99996 18.3332Z" stroke={stroke} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 6.6665V9.99984" stroke={stroke} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 13.3335H10.0083" stroke={stroke} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}

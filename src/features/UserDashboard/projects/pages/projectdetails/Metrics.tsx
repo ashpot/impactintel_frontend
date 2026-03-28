@@ -29,7 +29,7 @@ const Metrics = () => {
   return (
     <div className="space-y-7">
       {/* charts */}
-      <section className="grid grid-cols-2 gap-x-8">
+      <section className="grid lg:grid-cols-2 lg:gap-x-8 grid-cols-1 gap-y-7">
         <LineChartMain 
           title='Monthly Progress'
           data={hardcodedData}

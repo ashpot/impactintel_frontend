@@ -96,7 +96,7 @@ const UserOverview = () => {
         </section>
 
         {/* analytics */}
-        <section className="flex gap-6">
+        <section className="grid lg:grid-cols-2 lg:gap-x-6 grid-cols-1 gap-y-7">
            <LineChartMain 
                 data={lineChart_data}
                 ticks={[0, 25, 50, 75, 100]}

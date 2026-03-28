@@ -8,9 +8,10 @@ import { ReportsPage } from "@/features/UserDashboard/reports";
 import { UploadsPage } from "@/features/UserDashboard/uploads";
 import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
 import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
-import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
+import { AdminLayout, AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
 import ScreenGuard from "@/shared/components/ScreenGuard";
 import PageTransition from "@/shared/components/PageTransition";
+import { AdminOverview } from "@/features/AdminDashboard/overview";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -66,8 +67,16 @@ const AppRouter = () => {
             <Route path="integrations" element={<Integrations />} />
             <Route path="user-management" element={<UserManagement />} />
           </Route>
+      </Route>
 
-
+        {/* admin dashboard routes */}
+       <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminOverview />} />
+          {/* <Route path="projects" element={<ProjectsPage />} /> */}
+          {/* <Route path="reports" element={<ReportsPage />} /> */}
+          {/* <Route path="uploads" element={<UploadsPage />} /> */}
+          {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}
+          {/* <Route path="settings" element={<SettingsPage />} /> */}
       </Route>
     </Routes>
     </AnimatePresence>

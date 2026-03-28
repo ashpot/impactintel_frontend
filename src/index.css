@@ -29,7 +29,7 @@
   --font-jakarta: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", sans-serif;
   --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* DASHBOARD */
+  /* USER DASHBOARD */
   --color-dashboard-bg: hsla(62, 27%, 98%, 1);
   --color-nav-active: hsla(46, 100%, 96%, 1);
   --color-line: hsla(0, 0%, 91%, 1);
@@ -42,6 +42,11 @@
   /* error colors */
   --color-error: hsla(0, 87%, 70%, 1);
   --color-error01: hsla(0, 94%, 48%, 1);
+
+  /* ADMIN DASHBOARD */
+  --color-nav-bg: hsla(0, 0%, 11%, 1);
+  --color-nav-link: hsla(225, 2%, 55%, 1);
+  --color-nav-hover: hsla(0, 0%, 16%, 1);
 }
 @layer base {
   * {

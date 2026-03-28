@@ -1,0 +1,1 @@
+export {default as AdminOverview} from "@/features/AdminDashboard/overview/pages/AdminOverview"

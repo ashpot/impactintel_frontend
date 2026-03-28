@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import type { NavItem } from "../utils/types";
 import { Approval, Audit, DashboardIcon, Organization, ProfileUsers, Report01, ReportsIcon, SettingsIcon} from "../ui/SvgLib";
 import userAvatar from "/src/assets/images/testimonial_avatar_03.png"
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import Button from "../ui/Button";
 
 const navItems: NavItem[] = [
   { id: "overview",        label: "Overview",          path: "/admin",                 icon: DashboardIcon     },
@@ -72,7 +73,7 @@ const AdminNav = () => {
 
       {/* Footer */}
       <div className="pb-4">
-        <button className="w-full flex justify-center hover:bg-nav-hover px-2 py-3 transition-colors">
+        <Button className="bg-transparent border-transparent w-full flex justify-center hover:bg-nav-hover px-2 py-3 transition-colors">
             <div className="flex items-center gap-3 mx-auto rounded-lg">
                 <img
                     src={user.avatar}
@@ -86,9 +87,8 @@ const AdminNav = () => {
                     <p className="text-xs text-text-body">{user.role}</p>
                 </div>
                 <ChevronRight className="text-text-body"/>
-            </div>
-            
-        </button>
+            </div> 
+        </Button>
       </div>
       
 

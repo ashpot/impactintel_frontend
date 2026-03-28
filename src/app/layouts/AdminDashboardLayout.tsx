@@ -52,7 +52,7 @@ const AdminDashboardLayout = () => {
       )}
       {/* Main */}
       <main className="flex-1 overflow-y-auto bg-dashboard-bg">
-        <div className="dashboard-p font-lato my-10">
+        <div className="admin-p font-lato my-10">
           <Outlet />
         </div>
       </main>

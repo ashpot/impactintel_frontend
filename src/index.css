@@ -78,6 +78,9 @@
 @utility dashboard-p{
   @apply px-5 max-w-7xl mx-auto;
 }
+@utility admin-p{
+  @apply px-10 max-w-7xl mx-auto;
+}
 @utility card-shadow{
   @apply shadow-[0px_2px_12px_0px_hsla(215,50%,23%,0.08)];
 }

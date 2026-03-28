@@ -12,6 +12,7 @@ import { AdminLayout, AuthLayout, PublicLayout, SettingsLayout, UserDashboardLay
 import ScreenGuard from "@/shared/components/ScreenGuard";
 import PageTransition from "@/shared/components/PageTransition";
 import { AdminOverview } from "@/features/AdminDashboard/overview";
+import { RequestDetails, RequestPage } from "@/features/AdminDashboard/requests";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -72,7 +73,10 @@ const AppRouter = () => {
         {/* admin dashboard routes */}
        <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminOverview />} />
-          {/* <Route path="projects" element={<ProjectsPage />} /> */}
+          <Route path="demo-requests">
+            <Route index element={<RequestPage />} />          
+            <Route path=":slug" element={<RequestDetails />} />
+          </Route>
           {/* <Route path="reports" element={<ReportsPage />} /> */}
           {/* <Route path="uploads" element={<UploadsPage />} /> */}
           {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}

@@ -1,6 +1,8 @@
 import { Organization, Pending, ProfileUsers, type svgProps } from "@/shared"
+import { CardAnimation } from "@/shared/components/CardAnimation"
 import Container from "@/shared/components/Container"
 import PageTitle from "@/shared/components/PageTitle"
+import PageTransition from "@/shared/components/PageTransition"
 import Button from "@/shared/ui/Button"
 
 
@@ -8,13 +10,14 @@ interface statProps{
     title: string
     Icon: React.FC<svgProps>
     bigText: string
+    index: number
 }
 interface attentionProps{
     title?: string
     subtitle?: string
     status?: string
 }
-const statInfo: statProps[] = [
+const statInfo: Omit<statProps, 'index'>[] = [
     {
         title: 'Total Organizations',
         bigText: '247',
@@ -37,21 +40,24 @@ const statInfo: statProps[] = [
     },
 ]
 
-const StatCard = ({title, Icon, bigText }:statProps)=>{
+const StatCard = ({title, Icon, bigText, index }:statProps)=>{
   return(
-    <div className="card-shadow border border-line bg-white py-6 px-4 space-y-2 rounded-[10px]">
-          {/* title */}
-          <div className="flex justify-between">
+    <CardAnimation 
+        className="card-shadow border border-line bg-white py-6 px-4 space-y-2 rounded-[10px]"
+        index={index}
+    >
+        {/* title */}
+        <div className="flex justify-between">
             <p className="text-xs text-text-body capitalize">
-              {title}
+                {title}
             </p>
             <Icon className="w-5 h-5 text-text-body"/>
-          </div>
-          {/* big text */}
-          <div className="text-3xl font-semibold text-text-primary01 tracking-wider leading-tight">
-            {bigText}
-          </div>
         </div>
+        {/* big text */}
+        <div className="text-3xl font-semibold text-text-primary01 tracking-wider leading-tight">
+            {bigText}
+        </div>
+    </CardAnimation>
   )
 }
 const AttentionRow = ({
@@ -105,6 +111,7 @@ const AdminAction = ()=>{
 
 const AdminOverview = () => {
   return (
+    <PageTransition>
     <div className="space-y-8">
         <section className="flex justify-between">
             <PageTitle 
@@ -114,9 +121,10 @@ const AdminOverview = () => {
             <p className="font-medium text-xs text-text-body self-end">Last updated: Today, 10:42AM</p>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-6">
-            {statInfo.map(({title, Icon, bigText})=>{
+            {statInfo.map(({title, Icon, bigText}, i)=>{
             return(
                 <StatCard 
+                    index={i}
                     key={bigText}
                     title={title}
                     Icon={Icon}
@@ -163,8 +171,8 @@ const AdminOverview = () => {
             <AdminAction />
         </Container>
       </section>
-      
     </div>
+    </PageTransition>
   )
 }
 

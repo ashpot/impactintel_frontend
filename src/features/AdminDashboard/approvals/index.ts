@@ -1,0 +1,1 @@
+export {default as ApprovalPage} from "@/features/AdminDashboard/approvals/pages/ApprovalPage"

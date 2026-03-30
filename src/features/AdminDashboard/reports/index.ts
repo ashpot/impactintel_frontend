@@ -1,0 +1,1 @@
+export {default as AdminReportPage} from "@/features/AdminDashboard/reports/pages/ReportsPage"

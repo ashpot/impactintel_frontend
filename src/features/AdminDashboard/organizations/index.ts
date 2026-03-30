@@ -1,0 +1,2 @@
+export {default as OrganizationPage} from "@/features/AdminDashboard/organizations/pages/OrganizationsPage"
+export {default as OrganizationDetails} from "@/features/AdminDashboard/organizations/pages/OrganizationDetails"

@@ -13,6 +13,12 @@ import ScreenGuard from "@/shared/components/ScreenGuard";
 import PageTransition from "@/shared/components/PageTransition";
 import { AdminOverview } from "@/features/AdminDashboard/overview";
 import { RequestDetails, RequestPage } from "@/features/AdminDashboard/requests";
+import { OrganizationDetails, OrganizationPage } from "@/features/AdminDashboard/organizations";
+import { UsersPage } from "@/features/AdminDashboard/users";
+import { ApprovalPage } from "@/features/AdminDashboard/approvals";
+import { AdminReportPage } from "@/features/AdminDashboard/reports";
+import { AuditLogsPage } from "@/features/AdminDashboard/auditLogs";
+import { AdminSettingsPage } from "@/features/AdminDashboard/settings";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -77,10 +83,15 @@ const AppRouter = () => {
             <Route index element={<RequestPage />} />          
             <Route path=":slug" element={<RequestDetails />} />
           </Route>
-          {/* <Route path="reports" element={<ReportsPage />} /> */}
-          {/* <Route path="uploads" element={<UploadsPage />} /> */}
-          {/* <Route path="public-summary" element={<PublicSummaryPage />} /> */}
-          {/* <Route path="settings" element={<SettingsPage />} /> */}
+          <Route path="organizations">
+            <Route index element={<OrganizationPage />} />          
+            <Route path=":slug" element={<OrganizationDetails />} />
+          </Route>
+          <Route path="users" element={<UsersPage />} />
+          <Route path="approvals" element={<ApprovalPage />} />
+          <Route path="reports" element={<AdminReportPage />} />
+          <Route path="audit-logs" element={<AuditLogsPage />} />
+          <Route path="settings" element={<AdminSettingsPage />} />
       </Route>
     </Routes>
     </AnimatePresence>

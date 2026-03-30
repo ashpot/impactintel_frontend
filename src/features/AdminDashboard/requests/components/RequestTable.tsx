@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/shared/ui/Button";
 import { Link } from "react-router-dom";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// Types
 
 type PartnerStatus = "New" | "In Progress" | "Converted" | "Declined";
 
@@ -17,7 +17,7 @@ interface PartnershipRequest {
   status:        PartnerStatus;
 }
 
-// ─── Mock data ────────────────────────────────────────────────────────────────
+//Mock data 
 
 const MOCK: PartnershipRequest[] = [
   { id: "1",  orgName: "First Bank Nigeria",    sector: "Banking & Finance",  contactName: "Chidi Okonkwo",   contactEmail: "chidi.okonkwo@firstbank.com",     dateSubmitted: "10 Jan 2026", status: "New"         },
@@ -36,7 +36,7 @@ const MOCK: PartnershipRequest[] = [
 
 const PAGE_SIZE = 8;
 
-// ─── Status Badge ─────────────────────────────────────────────────────────────
+//Status Badge
 
 const STATUS_STYLES: Record<PartnerStatus, string> = {
   "New":         "bg-nav-active text-brand-primary",
@@ -45,20 +45,18 @@ const STATUS_STYLES: Record<PartnerStatus, string> = {
   "Declined":    "text-red-500",
 };
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+// Main Component
 
 interface RequestTableProps {
   search?:       string;
   statusFilter?: string;
   sectorFilter?: string;
-  onView?:       (id: string) => void;
 }
 
 const RequestTable = ({
   search       = "",
   statusFilter = "All Statuses",
   sectorFilter = "All Sectors",
-  onView       = (id) => console.log("View", id),
 }: RequestTableProps) => {
   const [pageIndex, setPageIndex] = useState(0);
 
@@ -174,18 +172,12 @@ const RequestTable = ({
 
                   {/* Action */}
                   <td className="px-6 py-5">
-                    <Button
-                        rightIcon={<ChevronRight className="w-4 h-4" />}
-                        variant="ghost"
-                        // onClick={() => onView(row.id)}
-                        className="flex items-center gap-1 font-semibold text-text-primary01 hover:text-brand-primary transition-colors"
-                    >
                         <Link
                             to={`/admin/demo-requests/${slug}`}
+                            className="flex gap-1 items-center py-2 text-sm active:scale-95 transition-all duration-150 hover:text-brand-primary"
                         >
-                            View
+                          View
                         </Link>
-                    </Button>
                   </td>
                 </tr>
               )})
@@ -194,7 +186,7 @@ const RequestTable = ({
         </table>
       </div>
 
-      {/* Footer */}
+                  {/* Footer */}
       <div className="flex items-center justify-between px-6 py-4 border-t border-line flex-wrap gap-3">
         <p className="text-sm text-text-body">
           Showing{" "}

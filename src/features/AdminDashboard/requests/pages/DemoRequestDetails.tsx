@@ -3,11 +3,12 @@ import PageTitle from "@/shared/components/PageTitle"
 import PageTransition from "@/shared/components/PageTransition"
 import Badge from "@/shared/ui/Badge"
 import Button from "@/shared/ui/Button"
-import { ChevronLeft } from "lucide-react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import RequestStatus from "../components/RequestStatus"
 import { useState } from "react"
 import OnboardingActions from "../components/OnboardingActions"
+import BackButton from "@/shared/ui/BackButton"
+import UseSlug from "@/shared/hooks/UseSlug"
 
 interface RequestInfoFieldProps{
     label: string
@@ -37,20 +38,17 @@ const RequestInfoField = ({label, value}: RequestInfoFieldProps)=>{
 
 const DemoRequestDetails = () => {
     const { slug } = useParams()
-    const detailTitle = slug?.replaceAll('-', ' ')
-    const navigate = useNavigate();
+    const {fromSlug} = UseSlug()
+    const detailTitle = fromSlug(slug)
     const [textarea, setTextarea] = useState("")
   return (
     <PageTransition>
         <div className="space-y-8">
-            <Button
-                variant="ghost"
-                leftIcon={<ChevronLeft className="w-5 h-5"/>}
-                className="px-0 text-text-body font-medium text-sm gap-1"
-                onClick={()=>navigate('/admin/demo-requests')}
+            <BackButton
+                path="/admin/demo-requests"
             >
                 Back to Demo Projects
-            </Button>
+            </BackButton>
 
             <section className="flex justify-between items-center">
                 <PageTitle 

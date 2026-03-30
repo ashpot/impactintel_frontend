@@ -1,0 +1,1 @@
+export {default as UsersPage} from "@/features/AdminDashboard/users/pages/UsersPage"

@@ -11,6 +11,7 @@ interface TableFilterProps {
   sectorOptions?:  string[];
   organizationOptions?: string[];
   roleOptions?: string[];
+  historyOptions?: string[];
 }
 
 const TableFilter = ({
@@ -23,7 +24,8 @@ const TableFilter = ({
   statusOptions = ["All Statuses", "New", "In Progress", "Converted", "Declined"],
   sectorOptions,
   organizationOptions,
-  roleOptions
+  roleOptions,
+  historyOptions = ["Newest First", "Oldest First"]
 }: TableFilterProps) => {
   return (
     <div className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-line font-lato">
@@ -83,7 +85,20 @@ const TableFilter = ({
         </select>
         <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
       </div>
-
+        {historyOptions && (
+        <div className="relative w-full border border-line rounded-lg">
+        <select
+        //   value={sector}
+        //   onChange={(e) => onSectorChange(e.target.value)}
+          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
+        >
+          {historyOptions.map((opt) => (
+            <option key={opt} value={opt}>{opt}</option>
+          ))}
+        </select>
+        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
+      </div>
+      )}
 
       {/* Sector Dropdown */}
       {sectorOptions && (

@@ -15,7 +15,7 @@ import { AdminOverview } from "@/features/AdminDashboard/overview";
 import { RequestDetails, RequestPage } from "@/features/AdminDashboard/requests";
 import { OrganizationDetails, OrganizationPage } from "@/features/AdminDashboard/organizations";
 import { UserDetails, UsersPage } from "@/features/AdminDashboard/users";
-import { ApprovalPage } from "@/features/AdminDashboard/approvals";
+import { ApprovalDetails, ApprovalPage } from "@/features/AdminDashboard/approvals";
 import { AdminReportPage } from "@/features/AdminDashboard/reports";
 import { AuditLogsPage } from "@/features/AdminDashboard/auditLogs";
 import { AdminSettingsPage } from "@/features/AdminDashboard/settings";
@@ -91,7 +91,10 @@ const AppRouter = () => {
             <Route index element={<UsersPage />} />
             <Route path=":slug" element={<UserDetails />} />
           </Route>
-          <Route path="approvals" element={<ApprovalPage />} />
+          <Route path="approvals">
+            <Route index element={<ApprovalPage />} />
+            <Route path=":slug" element={<ApprovalDetails />} />
+          </Route>
           <Route path="reports" element={<AdminReportPage />} />
           <Route path="audit-logs" element={<AuditLogsPage />} />
           <Route path="settings" element={<AdminSettingsPage />} />

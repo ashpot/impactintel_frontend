@@ -13,7 +13,9 @@ const OrganizationsPage = () => {
             />
             {/* table filter */}
              <section>
-                <TableFilter />
+                <TableFilter 
+                    sectorOptions={["All Sectors", "Banking & Finance", "Technology", "Telecommunications", "Philanthropy", "Manufacturing", "Energy & Oil"]}
+                />
             </section>
             {/* table */}
             <section>

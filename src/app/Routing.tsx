@@ -14,7 +14,7 @@ import PageTransition from "@/shared/components/PageTransition";
 import { AdminOverview } from "@/features/AdminDashboard/overview";
 import { RequestDetails, RequestPage } from "@/features/AdminDashboard/requests";
 import { OrganizationDetails, OrganizationPage } from "@/features/AdminDashboard/organizations";
-import { UsersPage } from "@/features/AdminDashboard/users";
+import { UserDetails, UsersPage } from "@/features/AdminDashboard/users";
 import { ApprovalPage } from "@/features/AdminDashboard/approvals";
 import { AdminReportPage } from "@/features/AdminDashboard/reports";
 import { AuditLogsPage } from "@/features/AdminDashboard/auditLogs";
@@ -87,7 +87,10 @@ const AppRouter = () => {
             <Route index element={<OrganizationPage />} />          
             <Route path=":slug" element={<OrganizationDetails />} />
           </Route>
-          <Route path="users" element={<UsersPage />} />
+          <Route path="users" >
+            <Route index element={<UsersPage />} />
+            <Route path=":slug" element={<UserDetails />} />
+          </Route>
           <Route path="approvals" element={<ApprovalPage />} />
           <Route path="reports" element={<AdminReportPage />} />
           <Route path="audit-logs" element={<AuditLogsPage />} />

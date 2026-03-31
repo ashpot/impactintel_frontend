@@ -127,7 +127,7 @@ const ApprovalCard = ({type, status, organization, description, submissionDate, 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: isRejected ? 0.5 : 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.25, delay: index * 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.25, delay: index * 0.1, ease: "easeOut" }}
             whileHover={{ scale: isRejected ? 1 : 1.01 }}
             className={`bg-white rounded-2xl border border-line p-6 font-lato card-shadow flex items-start`}
         >

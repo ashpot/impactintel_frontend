@@ -1,122 +1,124 @@
 import { Search, ChevronDown } from "lucide-react";
 
-interface TableFilterProps {
-//   search:          string;
-//   onSearchChange:  (val: string) => void;
-//   status:          string;
-//   onStatusChange:  (val: string) => void;
-//   sector:          string;
-//   onSectorChange:  (val: string) => void;
-  statusOptions?:  string[];
-  sectorOptions?:  string[];
-  organizationOptions?: string[];
-  roleOptions?: string[];
-  historyOptions?: string[];
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface SelectFilter {
+  label?:    string;
+  options:   string[];
+  value?:    string;
+  onChange?: (val: string) => void;
 }
 
+interface TableFilterProps {
+  searchPlaceholder?:  string;
+  searchLabel?:        string;
+  searchValue?:        string;
+  onSearchChange?:     (val: string) => void;
+  actorFilter?:        SelectFilter;
+  entityFilter?:       SelectFilter;
+  actionFilter?:       SelectFilter;
+  statusFilter?:       SelectFilter;
+  sectorFilter?:       SelectFilter;
+  organizationFilter?: SelectFilter;
+  roleFilter?:         SelectFilter;
+  dateRangeFilter?:    SelectFilter;
+  historyFilter?:      SelectFilter;
+  showLabels?:         boolean;
+}
+
+// ─── Select field ─────────────────────────────────────────────────────────────
+
+const SelectField = ({
+  filter,
+  showLabel,
+}: {
+  filter:    SelectFilter;
+  showLabel: boolean;
+}) => (
+  <div className="flex flex-col gap-1">
+    {showLabel && filter.label && (
+      <span className="text-xs text-text-body">{filter.label}</span>
+    )}
+    <div className="relative border border-line rounded-lg bg-white">
+      <select
+        value={filter.value}
+        onChange={(e) => filter.onChange?.(e.target.value)}
+        className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer whitespace-nowrap"
+      >
+        {filter.options.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </select>
+      <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
+    </div>
+  </div>
+);
+
+// ─── Main Component ───────────────────────────────────────────────────────────
+
 const TableFilter = ({
-//   search,
-//   onSearchChange,
-//   status,
-//   onStatusChange,
-//   sector,
-//   onSectorChange,
-  statusOptions = ["All Statuses", "New", "In Progress", "Converted", "Declined"],
-  sectorOptions,
-  organizationOptions,
-  roleOptions,
-  historyOptions = ["Newest First", "Oldest First"]
+  searchPlaceholder  = "Search...",
+  searchLabel,
+  searchValue,
+  onSearchChange,
+  actorFilter,
+  entityFilter,
+  actionFilter,
+  statusFilter,
+  sectorFilter,
+  organizationFilter,
+  roleFilter,
+  dateRangeFilter,
+  historyFilter,
+  showLabels         = false,
 }: TableFilterProps) => {
+
+  const filters = [
+    actorFilter,
+    entityFilter,
+    actionFilter,
+    statusFilter,
+    sectorFilter,
+    organizationFilter,
+    roleFilter,
+    dateRangeFilter,
+    historyFilter,
+  ].filter(Boolean) as SelectFilter[];
+
   return (
-    <div className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-line font-lato">
+    <div className="p-5 bg-white rounded-2xl border border-line font-lato">
+      {/*
+        Single flex-wrap row — everything sits inline.
+        Each item has a fixed min-width so it never stretches.
+        Items wrap to next line naturally when they run out of space.
+      */}
+      <div className="flex flex-wrap items-end gap-3">
 
-      {/* Search */}
-      <div className="relative w-full">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-placeholder pointer-events-none" />
-        <input
-          type="text"
-        //   value={search}
-        //   onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search by organization or email"
-          className="w-full pl-9 pr-4 py-2 text-sm text-text-primary bg-transparent rounded-lg border border-line placeholder:text-placeholder focus:outline-none focus:border-brand-primary transition-colors"
-        />
-      </div>
+        {/* Search — takes more space than filters */}
+        <div className="flex flex-col gap-1 min-w-[200px] flex-1">
+          {showLabels && searchLabel && (
+            <span className="text-xs text-text-body">{searchLabel}</span>
+          )}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-placeholder pointer-events-none" />
+            <input
+              type="text"
+              value={searchValue}
+              onChange={(e) => onSearchChange?.(e.target.value)}
+              placeholder={searchPlaceholder}
+              className="w-full pl-9 pr-4 py-2 text-sm text-text-primary bg-white rounded-lg border border-line placeholder:text-placeholder focus:outline-none focus:border-brand-primary transition-colors"
+            />
+          </div>
+        </div>
 
-      {organizationOptions && (
-        <div className="relative w-full border border-line rounded-lg">
-        <select
-        //   value={sector}
-        //   onChange={(e) => onSectorChange(e.target.value)}
-          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
-        >
-          {organizationOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
-        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
-      </div>
-      )}
-      {roleOptions && (
-        <div className="relative w-full border border-line rounded-lg">
-        <select
-        //   value={sector}
-        //   onChange={(e) => onSectorChange(e.target.value)}
-          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
-        >
-          {roleOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
-        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
-      </div>
-      )}
+        {/* All filters inline — fixed width, wraps naturally */}
+        {filters.map((filter, i) => (
+          <div key={i} className="min-w-37.5">
+            <SelectField filter={filter} showLabel={showLabels} />
+          </div>
+        ))}
 
-
-      {/* Status Dropdown */}
-      <div className="relative w-full border border-line rounded-lg">
-        <select
-        //   value={status}
-        //   onChange={(e) => onStatusChange(e.target.value)}
-          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
-        >
-          {statusOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
-        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
       </div>
-        {historyOptions && (
-        <div className="relative w-full border border-line rounded-lg">
-        <select
-        //   value={sector}
-        //   onChange={(e) => onSectorChange(e.target.value)}
-          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
-        >
-          {historyOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
-        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
-      </div>
-      )}
-
-      {/* Sector Dropdown */}
-      {sectorOptions && (
-        <div className="relative w-full border border-line rounded-lg">
-        <select
-        //   value={sector}
-        //   onChange={(e) => onSectorChange(e.target.value)}
-          className="appearance-none pl-3 pr-8 py-2 text-sm text-text-body bg-transparent border-none focus:outline-none cursor-pointer"
-        >
-          {sectorOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
-        <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-text-body pointer-events-none" />
-      </div>
-      )
-      }
-      
     </div>
   );
 };

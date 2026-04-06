@@ -172,8 +172,17 @@ const ApprovalPage = () => {
             />
 
             <section>
-                <TableFilter 
-                    statusOptions={['All Statuses', 'Approved', 'Pending', 'Rejected']}
+                <TableFilter
+                    showLabels={false}
+                    actorFilter={{
+                    options: ["All Types"],
+                    }}
+                    entityFilter={{
+                    options: ["All Statuses", "Approved", "Pending", "Rejected"],
+                    }}
+                    actionFilter={{
+                    options: ["Newest First", "Oldest First"],
+                    }}
                 />
             </section>
 

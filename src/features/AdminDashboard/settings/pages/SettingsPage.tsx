@@ -2,8 +2,6 @@ import PageTitle from "@/shared/components/PageTitle"
 import PageTransition from "@/shared/components/PageTransition"
 import { useScrollNav } from "../hooks/usescrollnav"
 import { useAdminSettingsForm } from "../action"
-
-// Section Components
 import GeneralSection from "../components/GeneralSection"
 import OrganizationRules from "../components/OrganizationRules"
 import ApprovalRules from "../components/ApprovalRules"

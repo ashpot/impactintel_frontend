@@ -1,6 +1,6 @@
 import PageTitle from "@/shared/components/PageTitle"
 import PageTransition from "@/shared/components/PageTransition"
-import TableFilter from "@/shared/components/TableFilter"
+// import TableFilter from "@/shared/components/TableFilter"
 import UsersTable from "../components/UsersTable"
 
 const UsersPage = () => {
@@ -12,13 +12,13 @@ const UsersPage = () => {
                 body="Platform-wide user account across all organizations"
             />
 
-            <section>
+            {/* <section>
                 <TableFilter 
                     roleOptions={["All Roles", "CSR Officer", "Auditor", "Client Admin"]}
                     statusOptions={["All Statuses", "Active", "Inactive", "Suspended"]}
                     organizationOptions={["All Organizations", "shell", "chevron", "mobil", "chivita", "green earth"]}
                 />
-            </section>
+            </section> */}
 
             <section>
                 <UsersTable />

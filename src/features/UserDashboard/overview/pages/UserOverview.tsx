@@ -4,6 +4,11 @@ import RecentRow from "../ui/RecentRow"
 import PageTransition from "@/shared/components/PageTransition"
 import { DonutChart } from "@/shared/components/DonutChart"
 import { LineChartMain } from "@/shared/components/LineChart"
+import stat1 from '/src/assets/icons/trend.svg'
+import stat2 from '/src/assets/icons/two_user.svg'
+import stat3 from '/src/assets/icons/wallet.svg'
+import stat4 from '/src/assets/icons/target.svg'
+
 
 // mock data
 const statInfo: StatCardProps[] = [
@@ -12,7 +17,7 @@ const statInfo: StatCardProps[] = [
         score: '85/100', 
         summary: 'Based on 8 active projects', 
         badgeText: '8% vs last quater', 
-        iconSrc: 'src/assets/icons/trend.svg', 
+        iconSrc: stat1, 
         iconBg: '#FFFAE9', 
         iconBorderColor: '#FFEBA4',
         index: 1
@@ -22,7 +27,7 @@ const statInfo: StatCardProps[] = [
         score: '12,450', 
         summary: 'Across all initiatives', 
         badgeText: '14% vs last month', 
-        iconSrc: 'src/assets/icons/two_user.svg', 
+        iconSrc: stat2, 
         iconBg: '#E8EBEE', 
         iconBorderColor: '#A2ACBA',
         index: 2
@@ -32,7 +37,7 @@ const statInfo: StatCardProps[] = [
         score: '68%', 
         summary: '₦45M of ₦66M', 
         badgeText: 'on track', 
-        iconSrc: 'src/assets/icons/wallet.svg', 
+        iconSrc: stat3, 
         iconBg: '#E6FBEC', 
         iconBorderColor: '#98EDB2',
         index: 3
@@ -41,7 +46,7 @@ const statInfo: StatCardProps[] = [
         title: 'sdg alignment',
         score: '6/7', 
         summary: 'primary focus areas',  
-        iconSrc: 'src/assets/icons/target.svg', 
+        iconSrc: stat4, 
         iconBg: '#EFEFEF', 
         iconBorderColor: '#C5C6C7',
         index: 4
@@ -91,7 +96,7 @@ const UserOverview = () => {
         </section>
 
         {/* analytics */}
-        <section className="flex gap-6">
+        <section className="grid lg:grid-cols-2 lg:gap-x-6 grid-cols-1 gap-y-7">
            <LineChartMain 
                 data={lineChart_data}
                 ticks={[0, 25, 50, 75, 100]}

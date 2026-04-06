@@ -9,6 +9,9 @@ import {
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Search, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/shared/ui/Button";
+import avatar01 from '/src/assets/images/testimonial_avatar_01.png'
+import avatar02 from '/src/assets/images/testimonial_avatar_02.png'
+import avatar03 from '/src/assets/images/testimonial_avatar_03.png'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -34,11 +37,11 @@ interface TeamMembersResponse {
 // ─── Mock data ────────────────────────────────────────────────────────────────
 
 const MOCK: TeamMember[] = [
-  { id: "1", name: "Sarah Johnson", email: "sarah.j@shell.com",   avatar: "/src/assets/images/testimonial_avatar_03.png",   role: "Admin",   status: "Active",      lastLogin: "2 hours ago"  },
-  { id: "2", name: "Michael Femi",  email: "michael.f@shell.com", avatar: "/src/assets/images/testimonial_avatar_01.png", role: "Officer", status: "Active",      lastLogin: "5 hours ago"  },
-  { id: "3", name: "Emily Davis",   email: "emily.d@shell.com",   avatar: "/src/assets/images/testimonial_avatar_02.png",   role: "Officer", status: "Deactivated", lastLogin: "1 day ago"    },
-  { id: "4", name: "David Ibe",     email: "david.i@shell.com",   avatar: "/src/assets/images/testimonial_avatar_01.png",   role: "Viewer",  status: "Active",      lastLogin: "3 days ago"   },
-  { id: "5", name: "Tobias Monty",  email: "tobias.m@shell.com",  avatar: "/src/assets/images/testimonial_avatar_01.png",  role: "Officer", status: "Active",      lastLogin: "3 days ago"   },
+  { id: "1", name: "Sarah Johnson", email: "sarah.j@shell.com",   avatar: avatar01,   role: "Admin",   status: "Active",      lastLogin: "2 hours ago"  },
+  { id: "2", name: "Michael Femi",  email: "michael.f@shell.com", avatar: avatar02, role: "Officer", status: "Active",      lastLogin: "5 hours ago"  },
+  { id: "3", name: "Emily Davis",   email: "emily.d@shell.com",   avatar: avatar03,   role: "Officer", status: "Deactivated", lastLogin: "1 day ago"    },
+  { id: "4", name: "David Ibe",     email: "david.i@shell.com",   avatar: avatar01,   role: "Viewer",  status: "Active",      lastLogin: "3 days ago"   },
+  { id: "5", name: "Tobias Monty",  email: "tobias.m@shell.com",  avatar: avatar03,  role: "Officer", status: "Active",      lastLogin: "3 days ago"   },
   { id: "6", name: "Amara Osei",    email: "amara.o@shell.com",   avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Amara",   role: "Viewer",  status: "Active",      lastLogin: "5 days ago"   },
   { id: "7", name: "Lena Weber",    email: "lena.w@shell.com",    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Lena",    role: "Officer", status: "Deactivated", lastLogin: "1 week ago"   },
   { id: "8", name: "Carlos Ruiz",   email: "carlos.r@shell.com",  avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos",  role: "Viewer",  status: "Active",      lastLogin: "2 weeks ago"  },

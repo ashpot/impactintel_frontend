@@ -11,7 +11,7 @@ const RecentRow = () => {
 
         {/* avatar + timestamp + link */}
         <div className="w-full flex justify-end">
-            <div className="max-w-xl w-[70%] items-center flex justify-between">
+            <div className="max-w-xl w-full items-center flex justify-between">
                 {/* avatar + name */}
                 <div className="text-sm text-text-primary01 flex gap-2 items-center">
                     <img src={avatar} alt="avatar" className="w-9 h-9 rounded-full" />

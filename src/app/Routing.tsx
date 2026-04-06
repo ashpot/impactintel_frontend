@@ -8,9 +8,17 @@ import { ReportsPage } from "@/features/UserDashboard/reports";
 import { UploadsPage } from "@/features/UserDashboard/uploads";
 import { PublicSummaryPage } from "@/features/UserDashboard/publicSummary";
 import { AccountSettings, Integrations, OrganizationProfile, UserManagement } from "@/features/UserDashboard/settings";
-import { AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
+import { AdminLayout, AuthLayout, PublicLayout, SettingsLayout, UserDashboardLayout } from "./layouts";
 import ScreenGuard from "@/shared/components/ScreenGuard";
 import PageTransition from "@/shared/components/PageTransition";
+import { AdminOverview } from "@/features/AdminDashboard/overview";
+import { RequestDetails, RequestPage } from "@/features/AdminDashboard/requests";
+import { OrganizationDetails, OrganizationPage } from "@/features/AdminDashboard/organizations";
+import { UserDetails, UsersPage } from "@/features/AdminDashboard/users";
+import { ApprovalDetails, ApprovalPage } from "@/features/AdminDashboard/approvals";
+import { AdminReportPage } from "@/features/AdminDashboard/reports";
+import { AuditLogsPage } from "@/features/AdminDashboard/auditLogs";
+import { AdminSettingsPage } from "@/features/AdminDashboard/settings";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -66,8 +74,30 @@ const AppRouter = () => {
             <Route path="integrations" element={<Integrations />} />
             <Route path="user-management" element={<UserManagement />} />
           </Route>
+      </Route>
 
-
+        {/* admin dashboard routes */}
+       <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminOverview />} />
+          <Route path="demo-requests">
+            <Route index element={<RequestPage />} />          
+            <Route path=":slug" element={<RequestDetails />} />
+          </Route>
+          <Route path="organizations">
+            <Route index element={<OrganizationPage />} />          
+            <Route path=":slug" element={<OrganizationDetails />} />
+          </Route>
+          <Route path="users" >
+            <Route index element={<UsersPage />} />
+            <Route path=":slug" element={<UserDetails />} />
+          </Route>
+          <Route path="approvals">
+            <Route index element={<ApprovalPage />} />
+            <Route path=":slug" element={<ApprovalDetails />} />
+          </Route>
+          <Route path="reports" element={<AdminReportPage />} />
+          <Route path="audit-logs" element={<AuditLogsPage />} />
+          <Route path="settings" element={<AdminSettingsPage />} />
       </Route>
     </Routes>
     </AnimatePresence>

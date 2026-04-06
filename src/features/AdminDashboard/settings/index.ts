@@ -1,0 +1,1 @@
+export {default as AdminSettingsPage} from "@/features/AdminDashboard/settings/pages/SettingsPage"

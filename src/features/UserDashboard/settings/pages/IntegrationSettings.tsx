@@ -1,10 +1,13 @@
 import { Plugs } from '@/shared';
+import google from '/src/assets/logo/logo_google_drive.svg'
+import slack from '/src/assets/logo/logo_slack.svg'
+import teams from '/src/assets/logo/logo_teams.svg'
 
 const IntegrationSettings = () => {
   const integrations = [
-    { name: 'Google Drive', icon: '/src/assets/logo/logo_google_drive.svg' },
-    { name: 'Slack', icon: '/src/assets/logo/logo_slack.svg' },
-    { name: 'Microsoft Teams', icon: '/src/assets/logo/logo_teams.svg' },
+    { name: 'Google Drive', icon: google },
+    { name: 'Slack', icon: slack },
+    { name: 'Microsoft Teams', icon: teams },
   ];
 
   return (

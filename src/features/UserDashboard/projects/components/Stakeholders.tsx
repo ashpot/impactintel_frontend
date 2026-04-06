@@ -1,3 +1,6 @@
+import avatar01 from '/src/assets/images/testimonial_avatar_01.png'
+import avatar02 from '/src/assets/images/testimonial_avatar_02.png'
+import avatar03 from '/src/assets/images/testimonial_avatar_03.png'
 // --- Types ---
 interface Stakeholder {
   id: string;
@@ -7,12 +10,12 @@ interface Stakeholder {
 
 // --- Data ---
 const stakeholders: Stakeholder[] = [
-  { id: "1", name: "Michael Femi",  avatar: "/src/assets/images/testimonial_avatar_03.png"  },
-  { id: "2", name: "Sarah Johnson", avatar: "/src/assets/images/testimonial_avatar_01.png"   },
-  { id: "3", name: "Emily Davis",   avatar: "/src/assets/images/testimonial_avatar_02.png"   },
-  { id: "4", name: "David Ibe",     avatar: "/src/assets/images/testimonial_avatar_03.png"   },
-  { id: "5", name: "Lisa Anderson", avatar: "/src/assets/images/testimonial_avatar_02.png"    },
-  { id: "6", name: "Tobias Monty",  avatar: "/src/assets/images/testimonial_avatar_01.png"  },
+  { id: "1", name: "Michael Femi",  avatar: avatar03  },
+  { id: "2", name: "Sarah Johnson", avatar: avatar01   },
+  { id: "3", name: "Emily Davis",   avatar: avatar02  },
+  { id: "4", name: "David Ibe",     avatar: avatar03   },
+  { id: "5", name: "Lisa Anderson", avatar: avatar01   },
+  { id: "6", name: "Tobias Monty",  avatar: avatar01  },
 ];
 
 const VISIBLE_COUNT = 6;

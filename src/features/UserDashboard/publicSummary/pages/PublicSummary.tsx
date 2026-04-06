@@ -46,9 +46,10 @@ const PublicSummary = () => {
         <div className="space-y-7">
         <HeroBanner />
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {PUBLIC_STAT.map((p,i)=>{
+        {PUBLIC_STAT.map((p, i)=>{
             return(
                 <PublicSumCard 
+                    key={i}
                     index={i}
                     {...p}
                 />

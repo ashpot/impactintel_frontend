@@ -1,6 +1,6 @@
 import PageTitle from "@/shared/components/PageTitle"
 import PageTransition from "@/shared/components/PageTransition"
-import TableFilter from "@/shared/components/TableFilter"
+// import TableFilter from "@/shared/components/TableFilter"
 import RequestTable from "../components/RequestTable"
 
 const DemoRequestPage = () => {
@@ -14,9 +14,9 @@ const DemoRequestPage = () => {
 
             {/* table toolbar */}
             <section>
-                <TableFilter 
+                {/* <TableFilter 
                     sectorOptions={["All Sectors", "Banking & Finance", "Technology", "Telecommunications", "Philanthropy", "Manufacturing", "Energy & Oil"]}
-                />
+                /> */}
             </section>
 
             {/* table */}

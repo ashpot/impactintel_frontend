@@ -1,6 +1,6 @@
 import PageTransition from "@/shared/components/PageTransition"
 import OrganizationTable from "../components/OrganizationTable"
-import TableFilter from "@/shared/components/TableFilter"
+// import TableFilter from "@/shared/components/TableFilter"
 import PageTitle from "@/shared/components/PageTitle"
 
 const OrganizationsPage = () => {
@@ -13,9 +13,9 @@ const OrganizationsPage = () => {
             />
             {/* table filter */}
              <section>
-                <TableFilter 
+                {/* <TableFilter 
                     sectorOptions={["All Sectors", "Banking & Finance", "Technology", "Telecommunications", "Philanthropy", "Manufacturing", "Energy & Oil"]}
-                />
+                /> */}
             </section>
             {/* table */}
             <section>
